@@ -1,0 +1,2330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
+</head>
+<body>
+<h1>Filtro de Datos</h1>
+
+<input type="text" id="filtro" placeholder="Filtrar por número de carátula">
+
+<table>
+  <tr>
+    <th>Número</th>
+    <th>Carátula</th>
+    <th>Estado de la firma</th>
+    <th>Fecha firma</th>
+    <th>Objeto</th>
+    <th>Responsable</th>
+    <th>Fecha Proyecto</th>
+    <th>Observaciones</th>
+  </tr>
+  <tr>
+    <td>30780/2016</td>
+    <td>FONTANA NICASTRO SAC C/ EN - DNV S/ PROCESO DE CONOCIMIENTO</td>
+    <td>Firmado</td>
+    <td>27/3/2023</td>
+    <td>BASE PARA REGULACIÓN</td>
+    <td>JF</td>
+    <td>25/4/2023</td>
+    <td>recibido en el juz 10 el 21/06</td>
+  </tr>
+  <tr>
+    <td>1250/2022</td>
+    <td>CORREDOR DE INTEGRACION PAMPEANA C/ EN DNV S/ PROCESO DE CONOCIMIENTO</td>
+    <td>Firmado</td>
+    <td>01/08/23</td>
+    <td>OPOSICION PRUEBA PERICIAL</td>
+    <td>MGC</td>
+    <td>3/8/2023</td>
+    <td>Se va al juz 10 04/08</td>
+  </tr>
+  <!-- Agregar los nuevos registros aquí -->
+  <tr>
+    <td>51644/2017</td>
+    <td>CABRALES SA C/ GCBA S/ PROCESO DE CONOCIMIENTO</td>
+    <td>Firmado</td>
+    <td>3/4/2023</td>
+    <td>EXCEPCIONES</td>
+    <td>MGC</td>
+    <td>7/6/2023</td>
+    <td>recibido en el juz 10 el 21/06</td>
+  </tr>
+  <tr>
+    <td>20082/2021</td>
+    <td>ACOSTA JAQUELINE DAIANA C/ EN M SEGURIDAD S/ DAÑOS Y PERJUICIOS</td>
+    <td>Firmado</td>
+    <td>8/5/2023</td>
+    <td>AMPLIACION DE PRUEBA</td>
+    <td>JF</td>
+    <td>16/6/2023</td>
+    <td>recibido en el juz 10 el 22/06</td>
+  </tr>
+  <tr>
+    <td>9684/2013</td>
+    <td>VADELL RICARDO JORGE c/ VOLKSWAGEN DE ARGENTINA SA S/ DAÑOS Y PERJUICIOS</td>
+    <td>Firmado</td>
+    <td>27/3/2023</td>
+    <td>HOMOLOGACION</td>
+    <td>MGC</td>
+    <td>22/6/2023</td>
+    <td>recibido en el juz 10 el 23/06</td>
+  </tr>
+  <tr>
+    <td>48824/22</td>
+    <td>ENACOM C/ TELECOM S/ PROCESO DE EJECUCION</td>
+    <td>Firmado</td>
+    <td>17/5/2023</td>
+    <td>SENTENCIA DE EJECUCION</td>
+    <td>MGC</td>
+    <td>26/6/2023</td>
+    <td>recibido en el juz 10 el 29/06</td>
+  </tr>
+  <tr>
+    <td>3230/2019</td>
+    <td>AMBIENTAL ARGENTINA SRL C/ ORG REGULADOR DEL SISTEMA DE AEROPUERTOS S/ PROC DE CON</td>
+    <td>Firmado</td>
+    <td>6/7/2023</td>
+    <td>OPOSICION PERICIA AMBIENTAL</td>
+    <td>JF</td>
+    <td>11/7/2023</td>
+    <td>recibido en el juz 10 el 12/7</td>
+  </tr>
+  <tr>
+    <td>19878/2021</td>
+    <td>PAOLINI HNOS SA C/ EN DNV LEY 13064 S/ PROCESO DE CONOCIMIENTO</td>
+    <td>Firmado</td>
+    <td>29/6/2023</td>
+    <td>OPOSICION PUNTOS DE PERICIA</td>
+    <td>JF</td>
+    <td>31/7/2023</td>
+    <td>recibido en el juz 10 el 7/8</td>
+  </tr>
+  <tr>
+    <td>9914/2020/1</td>
+    <td>INC EJEC PELLICER GUILLERMO GUSTAVO Y OTROS C/ EN M SEGURIDAD PSA s/ PERSONAL MIL</td>
+    <td>Pendiente</td>
+    <td>24/4/2023</td>
+    <td>IMPUGNA LIQUIDACION</td>
+    <td>MGC</td>
+    <td>1/8/2023</td>
+    <td>recibido en el juz 10 el 7/8</td>
+  </tr>
+  <tr>
+    <td>62254/2022</td>
+    <td>QUEIRUGA JUAN PABLO C/ EN M DEFENSA S/ PERSONAL MILITAR</td>
+    <td>Pendiente</td>
+    <td></td>
+    <td>FALTA DE HAB Y PRESCRIPCION</td>
+    <td>MGC</td>
+    <td>31/7/2023</td>
+    <td>recibido en el juz 10 el 7/8</td>
+  </tr>
+  <tr>
+    <td>5968/21</td>
+    <td>PM INDUSTRIAL SRL C/ EN AFIP S/ AMPARO LEY 16986</td>
+    <td>Firmado</td>
+    <td>31/7/2023</td>
+    <td>CADUCIDAD</td>
+    <td>JF</td>
+    <td>12/7/2023</td>
+    <td>recibido en el juz 10 el 7/8</td>
+  </tr>
+  <tr>
+    <td>726/10</td>
+    <td>SUAREZ ANA LUISA C/ EN SIDE S/ EMPLEO PUBLICO</td>
+    <td>Firmado</td>
+    <td>31/7/2023</td>
+    <td>CADUCIDAD</td>
+    <td>JF</td>
+    <td>1/8/2023</td>
+    <td>recibido en el juz 10 el 7/8</td>
+  </tr>
+  <tr>
+    <td>37838/2005</td>
+    <td>BARRERA EDGARDO RODOLFO C/ EN SIDE S/ EMPLEO PUBLICO</td>
+    <td>Firmado</td>
+    <td>31/7/2023</td>
+    <td>CADUCIDAD</td>
+    <td>JF</td>
+    <td>17/7/2023</td>
+    <td>recibido en el juz 10 el 7/8</td>
+  </tr>
+  <tr>
+    <td>1250/2022</td>
+    <td>CORREDOR DE INTEGRACION PAMPEANA C/ EN DNV S/ PROCESO DE CONOCIMIENTO</td>
+    <td>Firmado</td>
+    <td>01/08/23</td>
+    <td>OPOSICION PRUEBA PERICIAL</td>
+    <td>MGC</td>
+    <td>3/8/2023</td>
+    <td>recibido en el juz 10 el 7/8</td>
+  </tr>
+  <tr>
+    <td>46994/2015</td>
+    <td>BELUTECH SRL C/ EN M ECONOMIA Y OTRO S/ MED CAUT AUTONOMA</td>
+    <td>Firmado</td>
+    <td>01/08/23</td>
+    <td>PRESCRIPCION HONORARIOS</td>
+    <td>MGC</td>
+    <td>1/8/2023</td>
+    <td>recibido en el juz 10 el 7/8</td>
+  </tr>
+  <tr>
+    <td>25234/2021</td>
+    <td>OSARAN JUAN JOSE C/ EN DNM S/ EMPLEO PUBLICO</td>
+    <td>Firmado</td>
+    <td>21/06/23</td>
+    <td>OPOS PERICIAL CONTABLE</td>
+    <td>JF</td>
+    <td>12/7/2023</td>
+    <td>Se va al juz 10 07/08</td>
+  </tr>
+  <tr>
+    <td>3688/2021</td>
+    <td>HAAS ADRIANA INES C/ HOSPITAL NACIONAL PROFESOR S/ EMPLEO PUBLICO</td>
+    <td>Firmado</td>
+    <td>29/6/2023</td>
+    <td>OPOSICIONES A PRUEBA</td>
+    <td>EV</td>
+    <td></td>
+    <td>PASADO A NACHO</td>
+  </tr>
+<tr>
+  <td>55282/2019</td>
+  <td>FEI, WANG C/ EN-M INTERIOR OP Y V-DNM S/RECURSO DIRECTO DNM</td>
+  <td>Firmado</td>
+  <td>4/11/2022</td>
+  <td>CADUCIDAD</td>
+  <td>JF</td>
+  <td>7/11/2022</td>
+  <td>terminado</td>
+</tr>
+<tr>
+  <td>7357/2021</td>
+  <td>OVSEJEVICH, LUIS C/ EN - AFIP - LEY 27605 S/PROCESO DE CONOCIMIENTO</td>
+  <td>Firmado</td>
+  <td>7/2/2023</td>
+  <td>CONEXIDAD</td>
+  <td>LW</td>
+  <td>8/11/2022</td>
+  <td>terminado</td>
+</tr>
+<tr>
+  <td>17100/2020</td>
+  <td>OVSEJEVICH, LUIS C/ EN-AFIP Y OTRO S/PROCESO DE CONOCIMIENTO</td>
+  <td>Firmado</td>
+  <td>7/2/2023</td>
+  <td>CONEXIDAD</td>
+  <td>LW</td>
+  <td>8/11/2022</td>
+  <td>terminado</td>
+</tr>
+<tr>
+  <td>52959/2022</td>
+  <td>OVSEJEVICH C/ EN AFIP LEY 27667 S/ PROCESO DE CONOCIMIENTO</td>
+  <td>Firmado</td>
+  <td>7/2/2023</td>
+  <td>CONEXIDAD</td>
+  <td>LW</td>
+  <td>terminado</td>
+  <td></td>
+</tr>
+<tr>
+  <td>50082/2019</td>
+  <td>EMIRATES C/ EN-M INTERIOR OP Y V-DNM S/RECURSO DIRECTO DNM</td>
+  <td>Firmado</td>
+  <td>4/11/2022</td>
+  <td>IMPUGNACION LIQUIDACION</td>
+  <td>JF</td>
+  <td>22/11/2022</td>
+  <td>terminado</td>
+</tr>
+<tr>
+  <td>13770/2020</td>
+  <td>CARUSO, DANIEL HIGINIO C/ EN - AFIP S/PROCESO DE CONOCIMIENTO</td>
+  <td>Firmado</td>
+  <td>4/11/2022</td>
+  <td>IMPUGNACION LIQUIDACION</td>
+  <td>EV</td>
+  <td>9/11/2022</td>
+  <td>terminado</td>
+</tr>
+<tr>
+  <td>18516/2022</td>
+  <td>TOGNON, MARIA FERNANDA C/ EN-M RREE COMERCIO INTERANCIONAL Y CULTO S/DAÑOS Y PERJUICIOS</td>
+  <td>Firmado</td>
+  <td>13/2/2022</td>
+  <td>DEFECTO LEGAL</td>
+  <td>EV</td>
+  <td>2/3/2023</td>
+  <td>terminado</td>
+</tr>
+<tr>
+  <td>9076/2021</td>
+  <td>WETZEL LILIANA ISABEL CRISTINA</td>
+  <td>Firmado</td>
+  <td>4/11/2022</td>
+  <td>FALTA HABILITACION</td>
+  <td>LW</td>
+  <td>7/11/2022</td>
+  <td>terminado</td>
+</tr>
+<tr>
+  <td>68522/2015</td>
+  <td>INTERCLIMA SA C8 EN -DGA-</td>
+  <td>Firmado</td>
+  <td>3/11/2022</td>
+  <td>CADUCIDAD CON CONEXIDAD</td>
+  <td>LW</td>
+  <td>3/11/2022</td>
+  <td>terminado</td>
+</tr>
+<tr>
+  <td>12214/2021</td>
+  <td>ENRE c/ EDESUR</td>
+  <td>Firmado</td>
+  <td>2/11/2022</td>
+  <td>sentencia con excepc</td>
+  <td>CME</td>
+  <td>8/11/2022</td>
+  <td>terminado</td>
+</tr>
+<tr>
+  <td>2742/2019</td>
+  <td>AMERICAN AIRLINES INC c/ EN - DNM s/RECURSO DIRECTO DNM</td>
+  <td>Firmado</td>
+  <td>17/11/2022</td>
+  <td>IMPUGNACION LIQUIDACION</td>
+  <td>JF</td>
+  <td>2/12/2022</td>
+  <td>terminado</td>
+</tr>
+    <tr>
+      <td>89190/2018</td>
+      <td>EN-M PRODUCCION c/ TELECENTRO SA s/PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>17/11/2022</td>
+      <td>CADUCIDAD</td>
+      <td>JF</td>
+      <td>17/11/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>64506/2019</td>
+      <td>OJEDA, FRANCISCO CRISTIAN Y OTRO c/ EN - M DEFENSA - EJERCITO s/PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>17/11/2022</td>
+      <td>ACLARATORIA</td>
+      <td>EV</td>
+      <td>1/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>70023/2015</td>
+      <td>SANTA CRUZ, MARIA EUGENIA C/ EN-DGA S/DIRECCION GENERAL DE ADUANAS</td>
+      <td>Firmado</td>
+      <td>17/11/2022</td>
+      <td>CADUCIDAD (INTERCLIMA)</td>
+      <td>LW</td>
+      <td>23/11/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>10732/2020</td>
+      <td>DNM c/ WEIJIE s/ EJEC</td>
+      <td>Firmado</td>
+      <td>17/11/2022</td>
+      <td>INHABI TITULO Y PRESCRIP</td>
+      <td>LW</td>
+      <td>24/11/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>21699/2021</td>
+      <td>PANDO c/ EN s/ pers (es de la sec 13, despues lo paso, noe me deja editar el otr listado)</td>
+      <td>Firmado</td>
+      <td>17/11/2022</td>
+      <td>revocatoria</td>
+      <td>EV</td>
+      <td>18/11/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>14200/2020</td>
+      <td>DIRECCION NACIONAL DE MIGRACIONES c/ AMERICAN AIRLINES Y OTRO s/PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>17/11/2022</td>
+      <td>IMPUGNACION LIQUIDACION</td>
+      <td>EV</td>
+      <td>22/11/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>78114/2017</td>
+      <td>LIN, CHUANMIN c/ EN-M INTERIOR OP Y V-DNM s/RECURSO DIRECTO DNM</td>
+      <td>Firmado</td>
+      <td>17/11/2022</td>
+      <td>CADUCIDAD</td>
+      <td>JF</td>
+      <td>25/11/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>36038/2022</td>
+      <td>EN - M DESARROLLO PRODUCTIVO C/ FCA SA DE AHORRO PARA FINES DETERMINADOS S/PROCESO DE EJE</td>
+      <td>Firmado</td>
+      <td>17/11/2022</td>
+      <td>IMPUGNACION LIQUIDACION</td>
+      <td>EV</td>
+      <td>18/11/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>36780/2022</td>
+      <td>TROLLI, CAROLINA NELLY Y OTROS c/ EN - M SEGURIDAD - PFA s/PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>25/11/2022</td>
+      <td>OPOSICION A PRUEBA PERICIAL CONTABLE</td>
+      <td>MPR</td>
+      <td>1/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>12282/2021</td>
+      <td>INTERBAIRES SA C/ EN AFIP DGI S/ DGI</td>
+      <td>Firmado</td>
+      <td>12/12/2022</td>
+      <td>CONEXIDAD</td>
+      <td>LW</td>
+      <td>16/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>20824/2021</td>
+      <td>INGENIERO MEDINA SA C/ EN DNV S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>6/3/2023</td>
+      <td>OPOSICION PTOS DE PRUEBA PERICIAL</td>
+      <td>JF</td>
+      <td>9/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>24004/2022</td>
+      <td>GONZALEZ MARCELO C/ EN M SEGURIDAD PFA S/ PERSONAL MILITAR Y CIVIL</td>
+      <td>Firmado</td>
+      <td>5/12/2022</td>
+      <td>FALTA DE LEG PASIVA</td>
+      <td>MGC</td>
+      <td>9/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>7170/2021</td>
+      <td>KACIYAN MARCELO ALEXIS C/ EN AFIP LEY 27605 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>6/12/2022</td>
+      <td>OPOSICION PERICIAL</td>
+      <td>EV</td>
+      <td>19/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>4826/21</td>
+      <td>ARANDA JOSE ANTONIO C/ EN AFIP LEY 27605 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>5/12/2022</td>
+      <td>CAUTELAR ABSTRACTO</td>
+      <td>LW</td>
+      <td>13/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>30016/2017</td>
+      <td>EN M PRODUCCION C/ MAXICONSUMO SA S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>5/12/2022</td>
+      <td>SE RECHAZA REPOSICIÓN</td>
+      <td>LH</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>79842/2017</td>
+      <td>TELECOM ARGENTINA SA c/ EN-ENACOM s/PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>5/12/2022</td>
+      <td>CADUCIDAD</td>
+      <td>MPR</td>
+      <td>6/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>22158/2018</td>
+      <td>DA ROS ANTONIO LUIS C/ EN AFIP Y OTRO S/ HABEAS DATA</td>
+      <td>Firmado</td>
+      <td>5/12/2022</td>
+      <td>CADUCIDAD DE INSTANCIA</td>
+      <td>JF</td>
+      <td>15/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>894/2022</td>
+      <td>AGENCIA DE ACCESO A LA INF PUB C/ TELE MOV DE ARG SA S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>5/12/2022</td>
+      <td>SENTENCIA</td>
+      <td>LW</td>
+      <td>15/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    </tr>
+    <tr>
+      <td>33106/2017</td>
+      <td>ROMERO JORGE C/ EN M SEGURIDAD PNA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>17/11/2022</td>
+      <td>LIQUIDACION</td>
+      <td>MGC</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>30186/2022</td>
+      <td>EN M DESARROLLO PRODUCTIVO C/ RIOS AR SA (BUQUEBUS TURISMO) S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>12/12/2022</td>
+      <td>EXCEPCION INHABILIDAD DE TITULO</td>
+      <td>LW</td>
+      <td>25/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>8162/2021</td>
+      <td>CAMPITELLI ALFONSO JOSE C/ EN AFIP LEY 27605 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>13/12/2022</td>
+      <td>PRUEBA PERICIAL CONTABLE</td>
+      <td>JF</td>
+      <td>27/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>11116/2021</td>
+      <td>LEW DINO ARTURO C/ EN AFIP LEY 27605 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>12/12/2022</td>
+      <td>PRUEBA PERICIAL CONTABLE</td>
+      <td>JF</td>
+      <td>28/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>4728/2021</td>
+      <td>SRODEK HART C/ EN AFIP LEY 27605 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>12/12/2022</td>
+      <td>REVOCATORIA- POR NO CONT. LA DEMANDA</td>
+      <td>GB</td>
+      <td>15/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>47682/2018</td>
+      <td>MOHD NAZMUL C/ EN M INTERIOR CONARE S/ PROCESO DE CONOCIMIENTO (HECHO NUEVO)</td>
+      <td>Firmado</td>
+      <td>12/12/2022</td>
+      <td>SITUACION POL Y SOC LUG. ORIGEN DEL ACTOR</td>
+      <td>MGC</td>
+      <td>26/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>25040/2014</td>
+      <td>BIANCHI RUBEN OSCAR C/ EN M DEFENSA EJERCITO S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>12/12/2022</td>
+      <td>IMPUGNACION DE LIQUIDACION</td>
+      <td>MGC</td>
+      <td>26/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>39476/2019</td>
+      <td>OBRA SOCIAL DEL PERSONAL DEL VIDRIO C/ AFIP-DGI S/ DGI</td>
+      <td>Firmado</td>
+      <td>12/12/2022</td>
+      <td>PERICIAL CONTABLE</td>
+      <td>JF</td>
+      <td>22/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>36152/2022</td>
+      <td>AGUILAR FERNANDO DAVID C/ EN M SEGURIDAD PFA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>12/12/2022</td>
+      <td>OPOSICION DE PRUEBA</td>
+      <td>EV</td>
+      <td>24/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>47330/2022</td>
+      <td>DNM C/ ESCOBAR NESTOR S/ MEDIDA DE RETENCION</td>
+      <td>Firmado</td>
+      <td>13/12/2022</td>
+      <td>DEJAR SIN EFECTO MEDIDA DISPUESTA</td>
+      <td>MGC</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>12546/2020</td>
+      <td>EN M PRODUCCION C/ PRISMA MEDIOS DE PAGO SA S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>22/2/2023</td>
+      <td>IMPUGNACION DE LIQUIDACION</td>
+      <td>MGC</td>
+      <td>27/2/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>81498/2018</td>
+      <td>EN M PRODUCCION C/ WALL STREET INSTITUTE S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>13/12/2022</td>
+      <td>IMPUGNACION DE LIQUIDACION</td>
+      <td>MGC</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>28110/2018</td>
+      <td>ZHANG WENXING C/ EN DNM S/ RECURSO DIRECTO DNM</td>
+      <td>Firmado</td>
+      <td>22/12/2022</td>
+      <td>CADUCIDAD</td>
+      <td>EV</td>
+      <td>26/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>33288/2019</td>
+      <td>TRIPICHIO FABIAN ALBERTO C/ EN M DESARROLLO SOCIAL SEC NIÑEZ S/ EMPLEO PUBLICO</td>
+      <td>Firmado</td>
+      <td>22/12/2022</td>
+      <td>CADUCIDAD</td>
+      <td>JF</td>
+      <td>28/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>12254/2020</td>
+      <td>AMERICAN AIRLINES INC c/ EN - DNM s/RECURSO DIRECTO DNM</td>
+      <td>Firmado</td>
+      <td>22/12/2022</td>
+      <td>PLANTEO DE DESISTIMIENTO</td>
+      <td>JF</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>3688/2021</td>
+      <td>HAAS ADRIANA INES C/ HOSPITAL NACIONAL PROFESOR S/ EMPLEO PUBLICO</td>
+      <td>Firmado</td>
+      <td>26/12/2022</td>
+      <td>EXCEP LEG PASIVA</td>
+      <td>ASB</td>
+      <td>28/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>1280/2022</td>
+      <td>EN M DESARROLLO C/ AMX ARGENTINA SA S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>1/2/2023</td>
+      <td>CADUCIDAD INC DE PRESCRPCION</td>
+      <td>JF</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>148/2017</td>
+      <td>CPACF C/ SALVO S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td></td>
+      <td>ACLARATORIA</td>
+      <td>ADC</td>
+      <td>21/12/2022</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>69390/2019</td>
+      <td>IMPUGNACION LIQUIDACION</td>
+      <td>Firmado</td>
+      <td>1/2/2023</td>
+      <td>IMPUGNACION DE LIQUIDACION</td>
+      <td>MGC</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>59438/2019</td>
+      <td>OCHOA GUSTAVO C/ EN M DESARROLLO S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>PRESCRIPCION Y FALTA DE LEGITIMACIÓN</td>
+      <td>JF</td>
+      <td>28/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>43096/2019</td>
+      <td>SHIPKA SA C/ EN CONSEJO FEDERAL PESQUERO S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>29/12/2022</td>
+      <td>CONEXIDAD CON 18871/19</td>
+      <td>MGC</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+</tr>
+    <tr>
+      <td>18871/2019</td>
+      <td>APOLO FISH C/ CONSEJO FEDERAL PESQUERO S/ IMPUGNACION DE ACTO ADMINISTRATIVO</td>
+      <td>Firmado</td>
+      <td>29/12/2022</td>
+      <td>CONEXIDAD CON 43096/19</td>
+      <td>MGC</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>85788/2018</td>
+      <td>ASOCIACION CIVIL TRABAJO ED Y CULT C/ CABLEVISION S/ PROCESO DE CONOCIMIENTO</td>
+      <td></td>
+      <td></td>
+      <td>EXCCUSACION DEL JUZ 9 RECHAZO</td>
+      <td>MGC</td>
+      <td>27/12/0222</td>
+      <td>terminado</td>
+    </tr>
+<tr>
+      <td>13428/2021</td>
+      <td>FIORENTINO BRENDA C/ EN M JUSTICIA SPF S/ PERSONAL MIITAR</td>
+      <td>Firmado</td>
+      <td>13/2/2023</td>
+      <td>FALTA HAB DE INSTANCIA</td>
+      <td>EV</td>
+      <td>8/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>60848/2017</td>
+      <td>BENTANCUR SOFIA LOURDES C/ UBA S/ EMPLEO PUBLICO</td>
+      <td>Firmado</td>
+      <td>15/2/2023</td>
+      <td>FALTA DE LEG Y PRESCRIPCION</td>
+      <td>JF</td>
+      <td>1/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>10718/2021</td>
+      <td>ALMABUDHA C/ EN M DESARROLLO S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>15/2/2023</td>
+      <td>CADUCIDAD DE INSTANCIA</td>
+      <td>JF</td>
+      <td>24/2/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>28994/2022</td>
+      <td>DASSIS, LILIANA NATALIA C/ UTN S/ EMPLEO PUBLICO</td>
+      <td>Firmado</td>
+      <td>15/2/2023</td>
+      <td>OPOSICION PUNTOS DE PERICIA CONTABLE</td>
+      <td>JF</td>
+      <td>27/2/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>7162/2021</td>
+      <td>TRIPPAR DANIEL C/ EN AFIP LEY 27605 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>22/2/2023</td>
+      <td>OPOSICION PRUEBA PERICIAL</td>
+      <td>GB</td>
+      <td>24/2/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>19704/2021</td>
+      <td>ZALAZAR ROMINA C/ EN M SEGURIDAD PFA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>15/2/2023</td>
+      <td>OPOSICION PRUEBA INFORMATIVA</td>
+      <td>GB</td>
+      <td>21/2/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>13532/2022</td>
+      <td>DNM C/ EMPRESA EL RAPIDO SRL S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>22/2/2023</td>
+      <td>ACLARATORIA INTERESES</td>
+      <td>EV</td>
+      <td>9/2/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>17908/2021</td>
+      <td>CARBALLO RAUL EMANUEL C/ EN M JUSTICIA SPF S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>15/2/2023</td>
+      <td>REPOSICION</td>
+      <td>EV</td>
+      <td>8/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>7186/2018</td>
+      <td>WU, ZHONG c/ EN - DNM s/RECURSO DIRECTO DNM</td>
+      <td>Firmado</td>
+      <td>28/2/2023</td>
+      <td>CADUCIDAD</td>
+      <td>JF</td>
+      <td>3/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>21576/2022</td>
+      <td>CITYTOYS SA C/ EN AFIP S/ DGA</td>
+      <td>Firmado</td>
+      <td>28/2/2023</td>
+      <td>COSA JUZGADA</td>
+      <td>JF</td>
+      <td>14/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>11750/2021</td>
+      <td>POMPONIO MARIA C/ EN AFIP LEY 20628 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>28/2/2023</td>
+      <td>FALTA LEG PASIVA</td>
+      <td>EV</td>
+      <td>8/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>72422/2015/2</td>
+      <td>INCIDENTE N°2 ACTOR: ARTISTICAS SA DEMANDADO: INCA S/ BENEF DE LITIGAR S/G</td>
+      <td>Firmado</td>
+      <td>6/3/2023</td>
+      <td>CADUCIDAD DE INSTANCIA</td>
+      <td>JF</td>
+      <td>8/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>33932/19</td>
+      <td>BRITISH AIRWAYS PLC C/ EN-DNM S/ RECURSO DIRECTO PARA JUZGADOS</td>
+      <td>Firmado</td>
+      <td>6/3/2023</td>
+      <td>CADUCIDAD INC. DE CADUCIDAD</td>
+      <td>JF</td>
+      <td>21/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>2596/2018</td>
+      <td>MARQUEZ SEBASTIAN C/ EN M SEGURIDAD S/ PERSONAL MILITAR</td>
+      <td></td>
+      <td></td>
+      <td>EXCEPCION DEFECTO LEGAL</td>
+      <td></td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>16018/2020</td>
+      <td>EN DNM C/ CRUCERO DEL NORTE SRL S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>28/2/2023</td>
+      <td>NULIDAD DE NOTIFICACION</td>
+      <td>MGC</td>
+      <td>21/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>10000/2016</td>
+      <td>GALIANO VANESA C/ EN M SEGURIDAD PFA S/ PERSONAL MILIAR</td>
+      <td>Firmado</td>
+      <td>28/2/2023</td>
+      <td>sentencia con excepc</td>
+      <td>MGC</td>
+      <td>20/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>53842/2019</td>
+      <td>BORDON DANIELA C/ EN S/ EMPLEO PUBLICO</td>
+      <td>Firmado</td>
+      <td>6/3/2023</td>
+      <td>NEGLIGENCIA PRUEBA EMPLEO PUBLICO</td>
+      <td>GB</td>
+      <td>10/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>41658/2014/1</td>
+      <td>INCIDENTE N°1 GRANDOLI: EN M SEGURIDAD GN S/ INC EJ DE SENT</td>
+      <td>Firmado</td>
+      <td>28/2/2023</td>
+      <td>REV POR INT INTERESES</td>
+      <td>JF</td>
+      <td>15/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>1934/2021</td>
+      <td>SILVA ANGEL LEONOR C/ EN M INTERIOR S/ RECURSO DIR DNM</td>
+      <td>Firmado</td>
+      <td>6/3/2023</td>
+      <td></td>
+      <td>GB</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>20102/2021</td>
+      <td>SALINAS ALFONSO MARIA C/ EN M JUSTICIA S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>6/3/2023</td>
+      <td>CADUCIDAD DE INSTANCIA</td>
+      <td>JF</td>
+      <td>17/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>36128/2015</td>
+      <td>LOPEZ BRUNO Y OTROS C/ EN M SEGURIDAD GN S/ PERSONAL MILITAR Y CIVIL</td>
+      <td>Firmado</td>
+      <td>28/2/2023</td>
+      <td>REV POR INT INTERESES</td>
+      <td>GB</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>51048/2022</td>
+      <td>ENACOM C/ TELECOM ARGENTINA SA S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>28/2/2023</td>
+      <td>SENTENCIA</td>
+      <td>GB</td>
+      <td>28/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>45024/2017</td>
+      <td>JURJO ROMINA ISABEL C/ EN M SEGURIDAD PFA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>14/3/2023</td>
+      <td>REVOCATORIA</td>
+      <td>MGC</td>
+      <td>25/4/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>13482/2015</td>
+      <td>CASCO CARLOS DANIEL C/ EN M SEGURIDAD PFA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>9/3/2023</td>
+      <td>REVOCATORIA</td>
+      <td>GB</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>20982/2021</td>
+      <td>ARNALDI CARLOS C/ EN AFIP LEY 20628 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>14/3/2023</td>
+      <td>OPOS PURO DERECHO</td>
+      <td>GB</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>14428/2020</td>
+      <td>EN DNM C/ AMERICAN AIRLINES INC Y OTRO S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>14/3/2023</td>
+      <td>RECURSO EXTRAORDINARIO</td>
+      <td>JF</td>
+      <td>23/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>60000/2022</td>
+      <td>DNM C/ BOGADO ROA S/ MEDIDA DE RETENCION</td>
+      <td>Firmado</td>
+      <td>14/3/2023</td>
+      <td>ACLARATORIA</td>
+      <td>MGC</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>58580/2017</td>
+      <td>EN DNM C/ SOUTH AFRICAN AIRWAYS S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>13/3/2023</td>
+      <td>PROCESO DE EJECUCION</td>
+      <td>GB</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>38852/2022</td>
+      <td>MORALES VICTOR C/ EN M SEGURIDAD S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>FALTA DE LEG Y PRESCRIPCION</td>
+      <td>GB</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>45452/2022</td>
+      <td>SENASA C/ LEMA WALTER S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>SENTENCIA</td>
+      <td>GB</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>33822/2019</td>
+      <td>MEDINA CAROLINA PAOLA C/ MINISTERIO DE PROD S/ EMPLEO PUBLICO</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>CADUCIDAD DE INSTANCIA</td>
+      <td>JF</td>
+      <td>27/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>5975/2021</td>
+      <td>LOLOTEX SRL C/ EN M DESARROLLO PRODUCTIVO S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>CADUCIDAD DE INSTANCIA</td>
+      <td>JF</td>
+      <td>27/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>83204/2018</td>
+      <td>GALLI JORGE ALFREDO C/ EN M JUSTICIA DDHH SPF S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>CADUCIDAD DE INSTANCIA</td>
+      <td>JF</td>
+      <td>10/4/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>9300/2022</td>
+      <td>FAURIE JORGE MARCELO C/ EN AFIP LEY 20628 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>FALTA DE LEG PASIVA Y PRESCRIPCION</td>
+      <td>GB</td>
+      <td>25/4/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>22852/2019/1</td>
+      <td>Incidente Nº 1 - ACTOR: DELFIN C/EDENOR SA s/REDARGUCION DE FALSEDAD</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>CADUCIDAD DE INSTANCIA</td>
+      <td>JF</td>
+      <td>31/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>5260/2020</td>
+      <td>TELECOM ARGENTINA SA c/EN SEC DE GOBIERNO s/PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>FALTA LEG PASIVA</td>
+      <td>GB</td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>37478/2017</td>
+      <td>ARCE RUBEN DAVID C/ EN M SEGURIDAD S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>3/4/2023</td>
+      <td>REVOC INT BAJO EJECUCION</td>
+      <td>GB</td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>11920/2021</td>
+      <td>D ALESSANDRO C/ EN RIQUE C/ EN AFIP LEY 27605 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>3/4/2023</td>
+      <td>PERICIAL</td>
+      <td>GB</td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>21526/2022</td>
+      <td>ALANIZ JUAN MANUEL C/ EN M DEFENSA EA S/ PERSONAL MILITAR</td>
+      <td>Pendiente</td>
+      <td></td>
+      <td>PRESCRIPCION</td>
+      <td>SAM</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>62802/2022</td>
+      <td>PAMPA ENERGIA SA C/ EN AFIP DGI S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td></td>
+      <td>REVOCATORIA CON APELACION</td>
+      <td>SAM</td>
+      <td>11/4/2023</td>
+      <td>en cámara 5/05</td>
+    </tr>
+    <tr>
+      <td>60000/2022</td>
+      <td>DNM C/ BOGADO ROA S/ MEDIDA DE RETENCION</td>
+      <td>Pendiente</td>
+      <td>14/3/2023</td>
+      <td>MEDIDA DE RETENCION</td>
+      <td>MGC</td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>1526/2013</td>
+      <td>COVIARES SA C/ DNV S/ BENEFICIO DE LITIGAR SIN GASTOS</td>
+      <td>Pendiente</td>
+      <td></td>
+      <td>CONCESION DEL BENEFICIO</td>
+      <td>MPR</td>
+      <td>9/2/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>17338/20</td>
+      <td>COFCO INTERNATIONAL ARGENTINA SA C/ AFIP S/ DIRECCION GENERAL IMPOSITIVA</td>
+      <td>Firmado</td>
+      <td>2/5/2023</td>
+      <td>PERICIAL CONTABLE</td>
+      <td>JF</td>
+      <td>10/5/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>57452/2022</td>
+      <td>OVIEDO CRISTIAN C/ EN M SEGURIDAD PNA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>10/5/2023</td>
+      <td>PRESCRIPCION</td>
+      <td>ADC</td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>52322/2022</td>
+      <td>EN DNM C/ LA PRADERA SERVICIOS TEXTILES SA S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td></td>
+      <td>SENTENCIA</td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>65422/2022</td>
+      <td>ENACOM C/ TELEFONICA DE ARG S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td></td>
+      <td>SENTENCIA</td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>16948/2023</td>
+      <td>AGENCIA DE ACCESO A LA INF C/ BANCO SANTANDER SA S/ PROCESO DE EJECUCIO</td>
+      <td>Firmado</td>
+      <td></td>
+      <td>SENTENCIA</td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>33106/2017</td>
+      <td>ROMERO JORGE C/ EN M SEGURIDAD PNA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>17/11/2022</td>
+      <td>LIQUIDACION</td>
+      <td>MGC</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>58580/2017</td>
+      <td>EN DNM C/ SOUTH AFRICAN AIRWAYS S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>13/3/2023</td>
+      <td>PROCESO DE EJECUCION</td>
+      <td>GB</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>38852/2022</td>
+      <td>MORALES VICTOR C/ EN M SEGURIDAD S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>FALTA DE LEG Y PRESCRIPCION</td>
+      <td>GB</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>45452/2022</td>
+      <td>SENASA C/ LEMA WALTER S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>SENTENCIA</td>
+      <td>GB</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>33822/2019</td>
+      <td>MEDINA CAROLINA PAOLA C/ MINISTERIO DE PROD S/ EMPLEO PUBLICO</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>CADUCIDAD DE INSTANCIA</td>
+      <td>JF</td>
+      <td>27/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>5975/2021</td>
+      <td>LOLOTEX SRL C/ EN M DESARROLLO PRODUCTIVO S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>CADUCIDAD DE INSTANCIA</td>
+      <td>JF</td>
+      <td>27/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>83204/2018</td>
+      <td>GALLI JORGE ALFREDO C/ EN M JUSTICIA DDHH SPF S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>CADUCIDAD DE INSTANCIA</td>
+      <td>JF</td>
+      <td>10/4/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>9300/2022</td>
+      <td>FAURIE JORGE MARCELO C/ EN AFIP LEY 20628 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>FALTA DE LEG PASIVA Y PRESCRIPCION</td>
+      <td>GB</td>
+      <td>25/4/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>22852/2019/1</td>
+      <td>Incidente Nº 1 - ACTOR: DELFIN C/EDENOR SA s/REDARGUCION DE FALSEDAD</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>CADUCIDAD DE INSTANCIA</td>
+      <td>JF</td>
+      <td>31/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>5260/2020</td>
+      <td>TELECOM ARGENTINA SA c/EN SEC DE GOBIERNO s/PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>FALTA LEG PASIVA</td>
+      <td>GB</td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>37478/2017</td>
+      <td>ARCE RUBEN DAVID C/ EN M SEGURIDAD S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>3/4/2023</td>
+      <td>REVOC INT BAJO EJECUCION</td>
+      <td>GB</td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>11920/2021</td>
+      <td>D ALESSANDRO C/ EN RIQUE C/ EN AFIP LEY 27605 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>3/4/2023</td>
+      <td>PERICIAL</td>
+      <td>GB</td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>21526/2022</td>
+      <td>ALANIZ EMILCE KARINA C/ EN M SEGURIDAD S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>3/4/2023</td>
+      <td>CAJA DE ANSES</td>
+      <td>MGC</td>
+      <td>11/4/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>71772/2022</td>
+      <td>BINGOS DEL OESTE SA C/ EN AFIP LEY 27436 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>24/4/2023</td>
+      <td>ACUMULACION</td>
+      <td>JF</td>
+      <td>23/5/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>24266/2022</td>
+      <td>DA SILVA GALA SOLEDAD C/ EN M SEGURIDAD PSA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>OPOSICION A DOCUMENTAL</td>
+      <td>GB</td>
+      <td>20/4/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>10480/2021</td>
+      <td>GOLDFARB JORGE MANUEL C/ EN AFIP LEY 27605 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>24/4/2023</td>
+      <td>PERICIAL CONTABLE</td>
+      <td>JF</td>
+      <td>18/5/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>30780/2016</td>
+      <td>FONTANA NICASTRO SAC C/ EN - DNV S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>BASE PARA REGULACIÓN</td>
+      <td>JF</td>
+      <td>25/4/2023</td>
+      <td>recibido en el juz 10 el 21/06</td>
+    </tr>
+    <tr>
+      <td>11718/2021</td>
+      <td>ENRE C/ EDESUR SA S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>9/3/2023</td>
+      <td>IMPUGNACION LIQUIDACION y OPO A SUST DE EMBA</td>
+      <td>MGC</td>
+      <td>1/6/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>12878/2009</td>
+      <td>GONZALEZ JUAN CARLOS C/ EN M JUSTICIA PFA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>1/6/2023</td>
+      <td>IMPUGNACION INTERESES</td>
+      <td>MGC</td>
+      <td>5/6/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>50002/2022</td>
+      <td>URBAN INVERSIONES SA C/ EDENOR SA S/ EXPROPIACION SERV ADM</td>
+      <td>Firmado</td>
+      <td>3/4/2023</td>
+      <td>OPOSICION DOC EN PODER DEMANDADA</td>
+      <td>JF</td>
+      <td>13/6/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>7080/2012</td>
+      <td>MAZZITELLI MARCELO C/ EN M DEFENSA EJERCITO S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>24/4/2023</td>
+      <td>PRESCRIPCION INTERESES</td>
+      <td>MGC</td>
+      <td>9/6/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>45852/2022</td>
+      <td>GALLO MAURO HERNAN C/ EN M JUSTICIA SPF S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>2/5/2023</td>
+      <td>FALTA DE HABILITACION</td>
+      <td>EV</td>
+      <td>23/3/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>17428/2020</td>
+      <td>MARTINEZ VILLADA C/ EN M DEFENSA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>17/5/2023</td>
+      <td>IMPUGNACION LIQUIDACION</td>
+      <td>MGC</td>
+      <td>12/6/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>6194/2021</td>
+      <td>BADA VAZQUEZ VIDAL C/EN AFIP LEY 27605 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>17/5/2023</td>
+      <td>CADUCIDAD DE INSTANCIA</td>
+      <td>JF</td>
+      <td>26/5/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>14246/2021</td>
+      <td>ACUÑA NATALIA MARIEL C/ EN M JUSTICIA S/ PERSNAL MILITAR</td>
+      <td>Firmado</td>
+      <td>17/5/2023</td>
+      <td>FALTA DE HABILITACION</td>
+      <td>JF</td>
+      <td>6/6/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>55770/2015</td>
+      <td>CORIA ALEXIS C/ EN M SEGURIDAD S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>17/5/2023</td>
+      <td>IMPUGNACION</td>
+      <td>MGC</td>
+      <td>12/6/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>51644/2017</td>
+      <td>CABRALES SA C/ GCBA S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>3/4/2023</td>
+      <td>EXCEPCIONES</td>
+      <td>MGC</td>
+      <td>7/6/2023</td>
+      <td>recibido en el juz 10 el 21/06</td>
+    </tr>
+    <tr>
+      <td>2410/2021</td>
+      <td>BAIRES FLOORING SAS C/ EN M DESARROLLO S/ MED CAUT AUT</td>
+      <td>Firmado</td>
+      <td>8/6/2023</td>
+      <td>CADUCIDAD</td>
+      <td>JF</td>
+      <td>1/6/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>17036/2010</td>
+      <td>GALCERAN MARIA C/ EN M JUSTICIA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>17/5/2023</td>
+      <td>IMPUGNACION LIQUIDACION</td>
+      <td>MGC</td>
+      <td>14/6/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>20082/2021</td>
+      <td>ACOSTA JAQUELINE DAIANA C/ EN M SEGURIDAD S/ DAÑOS Y PERJUICIOS</td>
+      <td>Firmado</td>
+      <td>8/5/2023</td>
+      <td>AMPLIACION DE PRUEBA</td>
+      <td>JF</td>
+      <td>16/6/2023</td>
+      <td>recibido en el juz 10 el 22/06</td>
+    </tr>
+    <tr>
+      <td>33520/2005</td>
+      <td>ADOBATTO DARDO C/ EN M DEFENSA EMGA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>24/4/2023</td>
+      <td>IMPUGNA LIQUIDACION</td>
+      <td>MGC</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>83968/2015</td>
+      <td>AFTIC C/ TELEFONICA DE ARGENTINA S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>15/2/2023</td>
+      <td>SENTENCIA</td>
+      <td>MGC</td>
+      <td>9/6/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>11920/2021</td>
+      <td>D´ALESSANDRO ENRIQUE C/ EN AFIP LEY 27605 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td></td>
+      <td>REVOCATORIA IN EXTREMIS</td>
+      <td>EV</td>
+      <td>9/6/2023</td>
+      <td>terminado</td>
+    </tr>
+</tr>
+    <tr>
+      <td>33106/2017</td>
+      <td>ROMERO JORGE C/ EN M SEGURIDAD PNA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>17/11/2022</td>
+      <td>LIQUIDACION</td>
+      <td>MGC</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <!-- ... (other rows) ... -->
+    <tr>
+      <td>13028/2021</td>
+      <td>ARASHIRO, HERNAN CLAUDIO c/ EN - M JUS - SPF - DTO 586/19 s/PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>15/6/2023</td>
+      <td>FALTA DE HABILITACION</td>
+      <td>JF</td>
+      <td>12/6/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>41874/2007</td>
+      <td>AMANDULE MARIO C/ EN M INTERIOR GN S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>17/5/2023</td>
+      <td>IMPUGNACION LIQUIDACION</td>
+      <td>MGC</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+<tr>
+      <td>33106/2017</td>
+      <td>ROMERO JORGE C/ EN M SEGURIDAD PNA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>17/11/2022</td>
+      <td>LIQUIDACION</td>
+      <td>MGC</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <!-- ... (other rows) ... -->
+    <tr>
+      <td>13028/2021</td>
+      <td>ARASHIRO, HERNAN CLAUDIO c/ EN - M JUS - SPF - DTO 586/19 s/PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>15/6/2023</td>
+      <td>FALTA DE HABILITACION</td>
+      <td>JF</td>
+      <td>12/6/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>41874/2007</td>
+      <td>AMANDULE MARIO C/ EN M INTERIOR GN S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>17/5/2023</td>
+      <td>IMPUGNACION LIQUIDACION</td>
+      <td>MGC</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>7212/2018</td>
+      <td>SHI DIMEI C/ EN DNM S/ RECURSO DIRECTO DNM</td>
+      <td>Firmado</td>
+      <td>12/6/2023</td>
+      <td>CADUCIDAD</td>
+      <td>ADC</td>
+      <td>7/6/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>39890/2010</td>
+      <td>SUPERCEMENTO SAIC C/ EN DNV S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>17/5/2023</td>
+      <td>INTERESES DE CAPITAL</td>
+      <td>MGC</td>
+      <td>7/6/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>812/2016</td>
+      <td>CODIMAT SA C/ EN M HACIENDA Y FP S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>2/5/2023</td>
+      <td>IMPUGNACION LIQUIDACION/BASE P REGULAR HONORARIOS</td>
+      <td>JF</td>
+      <td>23/6/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>27538/03</td>
+      <td>EN M° RREE CI Y CULTO C/ GONZALEZ ALEJADNRO TOMAS S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>17/5/2023</td>
+      <td>OPOSICION PERICIAL CONTABLE</td>
+      <td>JF</td>
+      <td>22/6/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>69332/19</td>
+      <td>BRITISH AMERICAN C/ EN M HACIENDA S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>22/5/2023</td>
+      <td>PERICIAL CONTABLE</td>
+      <td>JF</td>
+      <td>27/6/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>17124/2020</td>
+      <td>EN - DNM c/ NEMBRONI RESTO SA s/PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>9/6/2023</td>
+      <td>NULIDAD DEL PROCESO</td>
+      <td>MGC</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+</tr>
+    <tr>
+      <td>33106/2017</td>
+      <td>ROMERO JORGE C/ EN M SEGURIDAD PNA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>17/11/2022</td>
+      <td>LIQUIDACION</td>
+      <td>MGC</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <!-- ... (previous rows) ... -->
+    <tr>
+      <td>5508/21</td>
+      <td>LASA SERGIO OMAR C/ EN PNA S/ PERSONAL MILITAR Y CIVIL</td>
+      <td>Firmado</td>
+      <td>31/5/2023</td>
+      <td>PRESCRIPCION, LEG ACTIVA Y PASIVA Y FALTA HABILITACION DE LA INSTANCIA</td>
+      <td>JF</td>
+      <td>8/6/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>28994/2022</td>
+      <td>DASSIS LILIANA NATALIA C/ UTN FACULTAD REGIONAL BS AS S/ EMPLEO PUBLICO</td>
+      <td>Firmado</td>
+      <td>8/6/2023</td>
+      <td>OPOSICION PERICIAL CALIGRAFICA</td>
+      <td>JF</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>23124/21</td>
+      <td>PEREGO CARLOS C/ EN DNM S/ EMPLEO PUBLICO</td>
+      <td>Firmado</td>
+      <td>1/6/2023</td>
+      <td>DEFECTO LEGAL - FALTA DE LEG ACTIVA</td>
+      <td>JF</td>
+      <td>4/7/2023</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>6998/2021</td>
+      <td>CARLINI LUIS ORLANDO C/ EN AFIP LEY 20628 S/ PROCESO DE CONOCMIENTO</td>
+      <td>Firmado</td>
+      <td>15/6/2023</td>
+      <td>CADUCIDAD</td>
+      <td></td>
+      <td></td>
+      <td>media firma</td>
+    </tr>
+    <tr>
+      <td>18903/2023</td>
+      <td>VANNI, ELIO C/ EN AFIP S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>21/06/23</td>
+      <td>CONEXIDAD CON CAUSA 17460/2020</td>
+      <td>JF</td>
+      <td>4/7/2023</td>
+      <td>media firma</td>
+    </tr>
+    <tr>
+      <td>43534/2022</td>
+      <td>LARGHI FRANCISCO C/ EN AFIP DGI S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>1/6/2023</td>
+      <td>OPOSICION DE PRUEBA</td>
+      <td>MGC</td>
+      <td></td>
+      <td>media firma</td>
+    </tr>
+</tr>
+    <tr>
+      <td>33106/2017</td>
+      <td>ROMERO JORGE C/ EN M SEGURIDAD PNA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>17/11/2022</td>
+      <td>LIQUIDACION</td>
+      <td>MGC</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>51720/2022</td>
+      <td>EN DNM C/ ROMAN DURRUTHY S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td></td>
+      <td>SENTENCIA</td>
+      <td></td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>27996/2022</td>
+      <td>EN M DE SEG C/ INST DE PUB Y EST SACIIF S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td></td>
+      <td>SENTENCIA</td>
+      <td></td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>17098/2020</td>
+      <td>AGENCIA DE ACCESO A LA INF PUB C/ TELECOM ARGENTINA SA S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>SENTENCIA</td>
+      <td></td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>68662/2022</td>
+      <td>EN M DESARROLLO PRODUCTIVO C/ CENCOSUD SA DISPO 132/22 S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td></td>
+      <td>SENTENCIA</td>
+      <td></td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>52572/2016</td>
+      <td>FRANCO CESAR C/ EN M SEGURIDAD PFA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>22/2/2023</td>
+      <td>IMPUGNACION</td>
+      <td>MGC</td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>9914/20/1</td>
+      <td>INC N°1 ACTOR PELLICER C/ EN M SEGURIDAD PSA S/ INC EJEC DE SENT</td>
+      <td>Firmado</td>
+      <td>24/4/2023</td>
+      <td>IMPUGNACION LIQUIDACION</td>
+      <td>JF</td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>4536/2017</td>
+      <td>CONDE JULIA C/ EN M SEGURIDAD PFA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>HON POR ETAPA EJECUCION</td>
+      <td>MGC</td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>46392/2015</td>
+      <td>TRAITCHEVITCH MATIAS C/ EN M SEGURIDAD PFA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>14/3/2023</td>
+      <td>REVOCATORIA INTM BAJO APERC EJE</td>
+      <td>MGC</td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>15012/2017</td>
+      <td>ACEVEDO OVIDIO C/ EN M SEGUERIDAD PFA S/ PERSONAL MILITAR</td>
+      <td>Pendiente</td>
+      <td></td>
+      <td>IMPUGNACION DE LIQUIDACION</td>
+      <td></td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>288/2017</td>
+      <td>AGUERO, GONZALO C/ EN M SEGURIDAD PFA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>14/3/2023</td>
+      <td>REVOCATORIA INT EJE</td>
+      <td>MGC</td>
+      <td>-</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>8930/2021</td>
+      <td>MORALES RAUL ORLANDO C/ EN M DEFENSA EJERCITO S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>8/5/2023</td>
+      <td>HABILITACION DE INSTANCIA</td>
+      <td>MGC</td>
+      <td>se habló con marcos al respecto y en la resolucion se debe mandar a Sentencia ya que tiene proyecto generado en el juz 10</td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>43490/2016</td>
+      <td>CHWOYEVSKY, ANIBAL C/ EN M DEFENSA EJERCITO S/ PERSONAL MILITAR</td>
+      <td></td>
+      <td>REV CON INT BAJO APERC EJEC INT DEL ACTOR</td>
+      <td></td>
+      <td></td>
+      <td>salio por despacho</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>48500/2011</td>
+      <td>GONNET EGAR JOSE LUIS C/ EN M DEFENSA EJERCITO S/ PERSONAL MILITAR</td>
+      <td>Pendiente</td>
+      <td></td>
+      <td>REP C/ INT BAJO APER EJE INT HON</td>
+      <td></td>
+      <td>salio por despacho</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>41038/2017</td>
+      <td>EN DNM C/ ANDRADE CASTELLANO</td>
+      <td>Firmado</td>
+      <td>15/2/2023</td>
+      <td>RETENCION</td>
+      <td>MGC</td>
+      <td></td>
+      <td>terminado</td>
+    </tr>
+    <tr>
+      <td>9970/21</td>
+      <td>GROSMAN MATIAS C/ EN AFIP LEY 27605 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td></td>
+      <td>REVOCATORIA IN EXTREMIS</td>
+      <td>EV</td>
+      <td>9/6/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>14606/2020</td>
+      <td>VALLEDOR HERNAN C/ EN DIR INT FAA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>28/4/2023</td>
+      <td>LIQUIDACION</td>
+      <td>GB</td>
+      <td>28/4/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>40882/2011</td>
+      <td>EN DNM C/ BUSTAMANTE ALFREDO JIMENEZ S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>24/4/2023</td>
+      <td>IMPUGNA LIQUIDACION</td>
+      <td>MGC</td>
+      <td>9/6/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>15386/2020</td>
+      <td>LAN ARGENTINA C/ DNM S/ REC DIR PARA JUZGADOS</td>
+      <td>Firmado</td>
+      <td>24/4/2023</td>
+      <td>FALTA DE LEG ACTIVA</td>
+      <td>GB</td>
+      <td>7/6/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>11570/2020</td>
+      <td>SOLAR JIENNENSE SRL C/ EN M ECONOCMIA SEC DE ENERGIA S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>8/5/2023</td>
+      <td>REVOCATORIA</td>
+      <td>EV</td>
+      <td>31/5/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>11116/21</td>
+      <td>L. D. A C/ EN AFIP LEY 27605 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>27/3/2023</td>
+      <td>REVOCATORIA IN EXTREMIS</td>
+      <td>EV</td>
+      <td>9/6/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>13028/2021</td>
+      <td>ARASHIRO, HERNAN CLAUDIO c/ EN - M JUS - SPF - DTO 586/19 s/PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>15/6/2023</td>
+      <td>FALTA DE HABILITACION</td>
+      <td>JF</td>
+      <td>12/6/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>41874/2007</td>
+      <td>AMANDULE MARIO C/ EN M INTERIOR GN S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>17/5/2023</td>
+      <td>IMPUGNACION LIQUIDACION</td>
+      <td>MGC</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>7212/2018</td>
+      <td>SHI DIMEI C/ EN DNM S/ RECURSO DIRECTO DNM</td>
+      <td>Firmado</td>
+      <td>12/6/2023</td>
+      <td>CADUCIDAD</td>
+      <td>ADC</td>
+      <td>7/6/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>39890/2010</td>
+      <td>SUPERCEMENTO SAIC C/ EN DNV S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>17/5/2023</td>
+      <td>INTERESES DE CAPITAL</td>
+      <td>MGC</td>
+      <td>7/6/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>812/2016</td>
+      <td>CODIMAT SA C/ EN M HACIENDA Y FP S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>2/5/2023</td>
+      <td>IMPUGNACION LIQUIDACION/BASE P REGULAR HONORARIOS</td>
+      <td>JF</td>
+      <td>23/6/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>27538/03</td>
+      <td>EN M° RREE CI Y CULTO C/ GONZALEZ ALEJADNRO TOMAS S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>17/5/2023</td>
+      <td>OPOSICION PERICIAL CONTABLE</td>
+      <td>JF</td>
+      <td>22/6/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>69332/19</td>
+      <td>BRITISH AMERICAN C/ EN M HACIENDA S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>22/5/2023</td>
+      <td>PERICIAL CONTABLE</td>
+      <td>JF</td>
+      <td>27/6/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>17124/2020</td>
+      <td>EN - DNM c/ NEMBRONI RESTO SA s/PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>9/6/2023</td>
+      <td>NULIDAD DEL PROCESO</td>
+      <td>MGC</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <!-- Agrega los registros adicionales aquí -->
+    <tr>
+      <td>2410/2019</td>
+      <td>LUKOWSKI SERGIO C/ EN M JUSTICIA DDHH SPF S/ AMPARO LEY 16986</td>
+      <td>Firmado</td>
+      <td>23/6/2023</td>
+      <td>EXCEPCION DE ESPERA</td>
+      <td>MGC</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>12544/2022</td>
+      <td>NOVOTNY GIMENA C/ UBA S/ AMPARO POR MORA</td>
+      <td>Firmado</td>
+      <td>14/6/2023</td>
+      <td>REVOCATORIA - VARIACION DE UMA</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>40960/2014</td>
+      <td>WEBER MENARDO C/ EN M SEGURIDAD PFA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>23/6/2023</td>
+      <td>IMPUGNACION LIQUIDACION</td>
+      <td>MGC</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>30236/2014</td>
+      <td>BENITO ROGGIO E HIJOS C/ EN DNV S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>23/6/2023</td>
+      <td>IMPUGNACION LIQUIDACION</td>
+      <td>MGC</td>
+      <td>3/7/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>35254/2017</td>
+      <td>SOSA JORGE DANIEL C/ FUNDACION TECNOLOGIA ARG S/ EMPLEO PUBLICO</td>
+      <td>Firmado</td>
+      <td>29/6/2023</td>
+      <td>ANTICIPO DE GASTOS</td>
+      <td>MGC</td>
+      <td>6/7/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>25762/2023</td>
+      <td>CHALFON EDUARDO MARCELO C/ EN REGISTRO NACIONAL DE REINCIDENCIA S/ HABEAS DATA</td>
+      <td>Firmado</td>
+      <td>29/6/2023</td>
+      <td>CUESTION DE COMPETENCIA</td>
+      <td>MGC</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>58348/2022</td>
+      <td>INTERBAIRES SA C/ EN AFIP DGI S/ DGI</td>
+      <td>Firmado</td>
+      <td>3/7/2023</td>
+      <td>CONEXIDAD CON CAUSA 12282/2021</td>
+      <td>MGC</td>
+      <td>4/7/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>59094/2022</td>
+      <td>ESTEVEZ LUCAS C/ EN M DEFENSA EJERCITO S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>6/7/2023</td>
+      <td>FALTA DE HABILITACION Y PRESCRIPCION</td>
+      <td>JF</td>
+      <td>6/7/2023</td>
+      <td>media firma</td>
+    </tr>
+    <tr>
+      <td>8930/2021</td>
+      <td>MORALES RAUL C/ EN M DEFENSA S/</td>
+      <td>Firmado</td>
+      <td>8/5/2023</td>
+      <td>FALTA DE HABILITACION</td>
+      <td>EV</td>
+      <td>10/7/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2742/2019</td>
+      <td>AMERICAN AIRLINES INC C/ EN DNMS/ REC DIR DNM</td>
+      <td>Firmado</td>
+      <td>1/6/2023</td>
+      <td>OPOS DE HONORARIOS POR ACTORA</td>
+      <td>EV</td>
+      <td>12/7/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>15348/2014</td>
+      <td>SWISS MEDICAL SA C/ SUPERINTENDENCIA DE SERVICIOS DE SALUD S/CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>21/06/23</td>
+      <td>HECHO NUEVO</td>
+      <td>MGC</td>
+      <td>10/7/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>13398/21</td>
+      <td>TRAVERSO MARIA LAURA C/ UBA S/ AMPARO POR MORA</td>
+      <td>Firmado</td>
+      <td>21/06/23</td>
+      <td>LIMITACION 20 %</td>
+      <td>MGC</td>
+      <td>11/7/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>65426/2022</td>
+      <td>BARAGIOTTA ABIGAIL C/ EN M JUSTICIA SPF S/ PERSONAL MILITAR Y CIVIL</td>
+      <td>Firmado</td>
+      <td>9/6/2023</td>
+      <td>EXCEPCIONES</td>
+      <td>EV</td>
+      <td>11/7/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>50402/2016</td>
+      <td>BAIGORRIA ANIBAL ANTONIO C/ EN M SEGURIDAD PFA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>23/6/2023</td>
+      <td>SENTENCIA DE REMATE - EXCEPCIONES</td>
+      <td>MGC</td>
+      <td>11/7/2023</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>5634/2023</td>
+      <td>CODIROLI MALEN C/ MINISTERIO DE TRABAJO EMPLEO Y SEG SOC S/ HABEAS DATA</td>
+      <td>Firmado</td>
+      <td>29/6/2023</td>
+      <td>DEFECTO LEGAL</td>
+      <td>JF</td>
+      <td>10/7/2023</td>
+      <td>MEDIA FIRMA</td>
+    </tr>
+    <tr>
+      <td>14472/2021</td>
+      <td>PERSICO VIVIANA LETICIA C/ EN AFIP LEY 20628 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>29/6/2023</td>
+      <td>LIQUIDACION DE INTERESES</td>
+      <td>MGC</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>13080/2020</td>
+      <td>PAZ RICARDO MARTIN C/ M JUSTICIA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>29/6/2023</td>
+      <td>IMPUGNACION DE LIQUIDACION</td>
+      <td>MGC</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>67998/2017</td>
+      <td>DNM C/ GUOQUAN HUANG S/ EJECUCION FISCAL</td>
+      <td>Firmado</td>
+      <td>29/6/2023</td>
+      <td>PLANTEA NULIDAD - LIQUIDACION</td>
+      <td>MGC</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>60192/2022</td>
+      <td>ANRIQUEZ C/ EN M SEG PFA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td></td>
+      <td>NULIDAD DE FS</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>13770/2020</td>
+      <td>CARUSO DANIEL HIGINIO C/ EN AFIP S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>3/7/2023</td>
+      <td>IMPUGNACION DE LIQUIDACION DE INTERESES</td>
+      <td>MGC</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>41038/2017</td>
+      <td>EN DNM C/ ANDRADE CASTELLANO S/ MEDIDAS DE RETENCION</td>
+      <td>Firmado</td>
+      <td>6/7/2023</td>
+      <td>MEDIDA DE RETENCION</td>
+      <td>MGC</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>51126/2017/1</td>
+      <td>INCIDENTE N°1 ACTOR SALCEDO C/ DNM S/ BENEFICIO</td>
+      <td>Firmado</td>
+      <td>23/6/2023</td>
+      <td>BLSG</td>
+      <td>MGC</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>81488/2018</td>
+      <td>EN - PRODUCCION C/ BANCO HIPOTECARIO SA S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>23/6/2023</td>
+      <td>APLICACION ART. 730 CCYCN</td>
+      <td>MGC</td>
+      <td></td>
+      <td>media firma</td>
+    </tr>
+    <tr>
+      <td>1319/2018</td>
+      <td>MONGELOS GUSTAVO ARIEL C/ EN M SEGURIDAD GN S/ PROCESO DE EJECUCION</td>
+      <td>Firmado</td>
+      <td>4/7/2023</td>
+      <td>EXCEPCION DE ESPERA</td>
+      <td>MGC</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>18566/2022</td>
+      <td>LEMOS JORGE HUMBERTO C/ EN AFIP LEY 20628 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>10/7/2023</td>
+      <td>INCOMPENTENCIA</td>
+      <td>MGC</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2626/2021</td>
+      <td>BOELA DIEGO MARTIN Y OTROS C/ EN M SEGURIDAD PSA S/ PERSONAL MILITAR</td>
+      <td>Firmado</td>
+      <td>3/7/2023</td>
+      <td>CADUCIDAD DE INSTANCIA</td>
+      <td></td>
+      <td></td>
+      <td>MEDIA FIRMA</td>
+    </tr>
+    <tr>
+      <td>69212/2022</td>
+      <td>SHIVITI SAS C/ EN M DESARROLLO S/ MED CAUT AUTONOMA</td>
+      <td>Firmado</td>
+      <td>29/6/2023</td>
+      <td>CADUCIDAD DE INSTANCIA</td>
+      <td>JF</td>
+      <td>12/7/2023</td>
+      <td>MEDIA FIRMA</td>
+    </tr>
+    <tr>
+      <td>38612/2022</td>
+      <td>CURY EDUARDO C/ EN AFIP LEY 20628 S/ PROCESO DE CONOCIMIENTO</td>
+      <td>Firmado</td>
+      <td>3/7/2023</td>
+      <td>IMPOSIBILIDAD DE CONTINUAR TRAMITE</td>
+      <td>MGC</td>
+      <td></td>
+      <td></td>
+    </tr>
+</table>
+
+<script>
+  const filtroInput = document.getElementById('filtro');
+  const tabla = document.querySelector('table');
+  filtroInput.addEventListener('keyup', filtrarTabla);
+
+  function filtrarTabla() {
+    const filtro = filtroInput.value.toUpperCase();
+    const filas = tabla.getElementsByTagName('tr');
+
+    for (let i = 1; i < filas.length; i++) {
+      const celdas = filas[i].getElementsByTagName('td');
+      let mostrarFila = false;
+
+      for (let j = 0; j < celdas.length; j++) {
+        const celda = celdas[j];
+        if (celda) {
+          if (celda.innerHTML.toUpperCase().indexOf(filtro) > -1) {
+            mostrarFila = true;
+            break;
+          }
+        }
+      }
+
+      filas[i].style.display = mostrarFila ? '' : 'none';
+    }
+  }
+</script>
+</body>
+</html>
+
