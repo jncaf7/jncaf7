@@ -6,6 +6,30 @@
 <style>
   body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  #filtro {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
   }
   table {
     width: 100%;
@@ -14,29 +38,47 @@
   }
   th, td {
     border: 1px solid #ccc;
-    padding: 8px;
+    padding: 12px;
     text-align: left;
   }
   th {
     background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  .expandable-text {
+    max-height: 20px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  .expanded {
+    max-height: none;
   }
 </style>
 </head>
 <body>
-<h1>Filtro de Datos</h1>
+<script>
+  const contraseñaCorrecta = "-CAF7-";
+  const contraseñaIngresada = prompt("Ingrese la contraseña:");
 
-<input type="text" id="filtro" placeholder="Filtrar por número de carátula">
+  if (contraseñaIngresada !== contraseñaCorrecta) {
+    alert("Contraseña incorrecta. No puede acceder a los datos.");
+    window.location = "about:blank"; // Redirigir a una página en blanco
+  }
+</script>
 
-<table>
-  <tr>
-    <th>Número</th>
-    <th>Carátula</th>
-    <th>Estado de la firma</th>
-    <th>Fecha firma</th>
-    <th>Objeto</th>
-    <th>Responsable</th>
-    <th>Fecha Proyecto</th>
-    <th>Observaciones</th>
+<div class="container">
+  <h1>Búsqueda de Jurisprudencia</h1>
+  <input type="text" id="filtro" placeholder="Filtrar por número de carátula">
+  <table>
+    <tr>
+      <th>Número</th>
+      <th>Carátula</th>
+      <th>Estado de la firma</th>
+      <th>Fecha firma</th>
+      <th>Objeto</th>
+      <th>Responsable</th>
+      <th>Link</th>
+      <th>Observaciones</th>
   </tr>
   <tr>
     <td>30780/2016</td>
@@ -45,10 +87,124 @@
     <td>27/3/2023</td>
     <td>BASE PARA REGULACIÓN</td>
     <td>JF</td>
-    <td>25/4/2023</td>
-    <td>recibido en el juz 10 el 21/06</td>
+    <td><a href="http://scw.pjn.gov.ar/scw/viewer.seam?id=D548NWlsTIDD8fwuPlvCMZs3TvZWtaEA3t9T80NSuwc%3D&tipoDoc=despacho&cid=227966" target="_blank">Link</a>
+    <td>
+      <div class="expandable-text">
+       I.- A fojas 489/506 (conf. surge del sistema informático Lex 100, al cual se hará referencia en lo sucesivo), la Dirección Nacional de Vialidad practica una liquidación a fin de determinar la base sobre la cual deberán regularse los honorarios de los profesionales intervinientes.
+
+Inicialmente, manifiesta que la liquidación practicada tiene por fin actualizar los intereses devengados en relación a las etapas del proceso y las normas involucradas. Sobre ello, aduce que para la primera etapa del proceso corresponde aplicar las disposiciones previstas en la Ley N° 21.839 (Aranceles Profesionales) y para la segunda y tercera etapa corresponde aplicar lo prescripto en el artículo 22 de la Ley N° 27.423 (Honorarios Profesionales). 
+
+En este sentido, sostiene que según jurisprudencia del Cimero Tribunal la aplicación de las normas atinentes a honorarios depende del momento en que las labores profesionales fueron desarrolladas. Bajo dicha premisa, arguye que los cálculos para las últimas dos etapas del pleito deben efectuarse sobre el capital reclamado en el escrito de demanda, más sus respectivos intereses. 
+
+Resalta que, si bien la actora no especificó monto alguno de capital reclamado al entablar la demanda, no debe soslayarse que dicha parte abonó la tasa de justicia por la suma de $86.384,42, lo que debe interpretarse como el 3% del monto pretendido, conforme lo dispone el artículo 2° de la Ley N° 23.898 (Tasas Judiciales). Bajo tales parámetros, determina -como cálculo total del supuesto monto pretendido por la actora- la suma de $2.879.480,67.
+
+Sobre esta base, calcula los intereses desde el 09/05/16 -fecha de la interposición de la demanda- hasta el 27/12/22 -fecha en que la Cámara dictó la sentencia definitiva-, aplicando la tasa activa del Banco de la Nación Argentina, lo que resulta en el monto de $8.141.005,97, en concepto de intereses.
+
+En vista de dichos cálculos, concluye que el monto total resulta ser $11.020.486,64, cifra sobre la cual deben calcularse los honorarios de los profesionales intervinientes en el pleito y a la que "debe aplicarse el art. 22 Ley 27.423".
+
+
+
+
+II.- A fojas 508, la parte actora se expide sobre el cálculo confeccionado por la demandada.
+
+Al punto, coincide con la contraria respecto al modo en que deben aplicarse las normas involucradas en cada etapa del proceso, resaltando que para la segunda y tercera etapa corresponde valerse de lo dispuesto en el artículo 22 de la Ley N° 27.423. Aclara que este último prevé que ante la desestimación de la demanda -como sucedió en el sub lite- el valor del pleito se rige por el importe pretendido en la misma, actualizado al momento de la sentencia y disminuido al treinta por ciento (30%) o en los procesos de monto indeterminado, según la pericia contable en caso de existir. Sobre ello, manifiesta que la demanda fue interpuesta sin un monto determinado, sin perjuicio de que, posteriormente, se produjo un informe pericial, el cual daba como monto de los intereses moratorios reclamados la suma de $2.039.363,95.
+
+En función de dichas particularidades, confecciona un cálculo de intereses sobre la base de $2.039.363,95, en el cual parte desde el 09/05/16 -fecha en que se entabló la demanda-, hasta el 27/12/22 -fecha en que la Alzada dictó la sentencia de fondo- aplicando la tasa activa del Banco de la Nación Argentina, liquidación equivalente a $5.767.787,65.
+
+Seguidamente, suma el monto inicial ($2.039.363,95) y los respectivos intereses ($5.767.787,65), lo que da como resultado el monto de $7.807.151,60, al cual resta el treinta por ciento previsto en el artículo 22 de la norma pertinente, lo que resulta en la suma total de $5.465.006,12, monto sobre el cual peticiona que sean calculados los honorarios de los profesionales intervinientes.
+
+
+
+
+III.- A fojas 512, la demandada contesta el planteo efectuado por la actora a fojas 508.
+
+Al respecto, manifiesta que dicha parte yerra al afirmar que la suma reclamada “es de $ 2.039.395,” (sic) conforme surge del informe pericial presentado “el 19.11.20” (sic), puesto que, tal como manifestó en la presentación de fojas 489/506, debe tenerse en cuenta la cuantía del monto oportunamente abonado por la actora en concepto de tasa de justicia, lo que -conforme los cálculos anteriormente formulados- daría como supuesto monto reclamado por la accionante, la suma de $2.879.480,67.
+
+Asimismo, aduce que en dicho informe pericial el experto calculó los intereses moratorios hasta la transferencia del pago pertinente, el cual fue anterior a la interposición de la demanda.
+
+En virtud de las particularidades descritas, solicita que se apruebe la liquidación practicada por su parte a fojas 489/506 y que, sobre ella, se regulen los honorarios correspondientes.
+
+
+
+
+IV.- Introducida la cuestión en pugna, corresponde hacer una síntesis de los hechos más relevantes de la causa, a fin de dilucidar con mayor facilidad la trama bajo examen:
+
+(i) La presente acción fue promovida por la firma Fontana Nicastro SAC a los fines de que la demandada Dirección Nacional de Vialidad abone los intereses devengados por la mora en que habría incurrido al transferir los montos correspondientes a la prestación brindada (v. fs. 1/10 del expte. en soporte papel).
+
+(ii) En oportunidad de abonar la tasa de justicia pertinente, la parte actora acompañó constancia de pago en los términos de la Ley N° 23.898 por un importe de $86.384,42 (v. fs. 16 del expte. en soporte papel).
+
+(iii) Mediante informe pericial contable, la perita SLAFMAN se expidió sobre los puntos propuestos por las partes y, en lo que aquí interesa, calculó los intereses moratorios al momento del pago, equivalentes a $2.039.363,95 (v. fs. 329/337).
+
+(iv) Al momento del dictado de la sentencia definitiva, este Juzgado rechazó las excepciones de defecto legal y falta de legitimación pasiva opuestas por la demandada y, a su vez, rechazó la demanda incoada; las costas fueron distribuidas por su orden, en los términos del artículo 71 del código de rito, por la existencia de vencimiento parcial y mutuo (v. fs. 464).
+
+(v) Disconformes con lo resuelto, ambas partes interpusieron sendos recursos de apelación; la parte demandada, por el modo de imposición de costas (v. fs. 465) y la parte actora, por causarle gravamen irreparable lo decidido sobre la cuestión de fondo (v. fs. 467). 
+
+(vi) Escudriñada la cuestión en segunda instancia, la Excelentísima Sala III del fuero confirmó la sentencia de grado en cuanto fuera materia de agravios y modificó la distribución de costas, imponiendo las mismas -en ambas instancias- a la actora vencida (v. fs. 487).
+
+
+
+
+V.- Aclarado lo anterior, cabe establecer los principios que atañen a la materia debatida en el sub judice.
+
+V.1.- Liminarmente, es dable señalar que el “monto del proceso” es una pauta objetiva cuya determinación es de vital importancia para establecer una retribución justa y equilibrada, la cual debe representar el interés patrimonial comprometido, es decir, la importancia económica del asunto apreciada en función de los intereses comprometidos en el litigio (conf. Passarón, Julio F. y Pesaresi, Guillermo M., "Honorarios Judiciales", Astrea, pág. 235).
+
+A su vez, la determinación del monto del proceso, a los efectos de la regulación de honorarios, debe ser examinada en cada caso particular, según las circunstancias, en orden a los intereses en juego, las situaciones planteadas a lo largo del proceso, la complejidad de la cuestión y la prolongación del pleito (conf. Amadeo, José L. "Honorarios de Abogados", Ad-hoc, pág. 65).
+
+V.2.- En otro orden de ideas, debe recordarse que el Poder Legislativo Nacional, sancionó, el 30/11/17, la Ley N° 27.423, la cual derogó la Ley N° 21.839 y estableció las nuevas bases arancelarias y el modo de su aplicación.
+
+V.3.- Por su parte, el Máximo Tribunal tiene proclamado que para los trabajos profesionales, el derecho se constituye en la oportunidad en que se los realiza, más allá de la época en que se practique la regulación (CSJN, Fallos 321:146; 328:1381; 329:1066,3148), por lo que el nuevo cuerpo normativo en materia de honorarios no es aplicable a los procesos fenecidos o en trámite, en lo que respecta a la labor desarrollada durante las etapas procesales concluidas durante la vigencia de la Ley N° 21.839 y la modificatoria Ley N° 24.432, o que hubieran tenido principio de ejecución (CSJN, Fallos: 268:352; 318:445; 318:1887; 319:1479; 323:2577; 331:1123). 
+
+V.4.- Respecto a las tasas judiciales y en lo que atañe al caso, debe recordarse que el artículo 5° de la Ley N° 23.898 contempla que "[a]l iniciarse juicios cuyo monto sea indeterminable, abonará la suma prevista en el artículo 6º, a cuenta. La tasa de justicia se completará luego de terminado el proceso por un modo normal o anormal. En esta tesitura, el artículo 6° del mentado cuerpo legal dispone que "[e]n los juicios cuyo objeto litigioso no tenga valor pecuniario y tampoco se encuentren comprendidos expresamente en las exenciones contempladas por esta ley u otro cuerpo normativo, se integrará en concepto de monto fijo la suma de AUSTRALES DOSCIENTOS CINCUENTA MIL (A 250.000) a junio de 1990, que será actualizado por la Corte Suprema de Justicia de la Nación de acuerdo al sistema que ella determine pagadero en su totalidad al inicio de las actuaciones".
+
+
+
+
+VI.- A esta altura del relato, corresponde determinar el monto sobre el cual deben calcularse los honorarios de los profesionales intervinientes.
+
+VI.1.- En primer término, cuadra recordar que el artículo 22 de la Ley de Honorarios Profesionales establece que "[e]n los juicios por cobro de sumas de dinero, a los fines de la regulación de honorarios de los profesionales intervinientes, la cuantía del asunto será el monto de la demanda o reconvención; si hubiera sentencia será el de la liquidación que resulte de la misma, actualizado por intereses si correspondiere. En caso de transacción, la cuantía será el monto de la misma. // Si fuere íntegramente desestimada la demanda o la reconvención, se tendrá como valor del pleito el importe de la misma, actualizado por intereses al momento de la sentencia, si ello correspondiere, disminuido en un treinta por ciento (30%), o, en los procesos de monto indeterminado, según la pericia contable, si existiere".
+
+VI.2.- La reseña que antecede resulta de utilidad para adelantar que tanto el cálculo efectuado por la demandada (v. fs. 489/506) como el cálculo confeccionado por la actora (v. fs. 508) resultan igualmente desacertados.
+
+VI.2.1.- Respecto a la liquidación practicada por la demandada, nótese que dicha parte soslayó la existencia de la pericia contable oportunamente efectuada en autos (v. fs. 329/337) a los efectos de confeccionar su cálculo, circunstancia que -a todas luces- significa apartarse del texto normativo por ella citado.
+
+Asimismo, no huelga añadir que el argumento por ella esgrimido respecto del monto oportunamente abonado por la actora en concepto de tasa de justicia, resulta por demás exiguo a fin de justificar el cálculo efectuado, dado que el artículo 6° de la Ley N° 23.898 dispone que "[a]l iniciarse juicios cuyo monto sea indeterminable, abonará la suma prevista en el artículo 6º, a cuenta". Obsérvese de ello, que la norma prevé para los pleitos de monto indeterminado -como sucede en la especie-, que la suma a abonar en concepto de tasa de justicia puede variar según las particularidades del proceso, es decir, no se trata de una suma inflexible (conf. doc. Sala V, in re: "Sucesión de Juan Carlos Relats c/ DGI s/recurso directo de organismo externo", del 23/06/17).
+
+En consecuencia, mal puede tomarse de forma rígida el pago oblado por la actora y encuadrarlo en los términos del artículo 2° de Ley N° 23.898, tal como pretende la demandada.
+
+VI.2.2.- En cuanto al cálculo practicado por la actora, si bien dicha parte atendió la pericia antedicha en ocasión de confeccionar la liquidación, se observa que la misma aplicó la disminución del 30% del valor del pleito que prevé el artículo 22 de la Ley N° 27.423, postura que no puede ser acogida.
+
+Ello así, dado que la disminución invocada por la actora sólo resulta aplicable cuando la demanda incoada contiene un importe determinado, actualizado por intereses al momento de la sentencia -si ello correspondiere-, lo que no sucede en la especie, dado que -como se ha señalado anteriormente- no existió monto alguno reclamado en el escrito de inicio.
+
+Así, cabe aclarar que el artículo pertinente establece dos supuestos: los procesos con monto determinado "o, en los procesos de monto indeterminado, según la pericia contable, si existiere". En tal sentido, la conjunción disyuntiva "o", sirve para denotar diferencia, separación o alternativa entre dos o más cosas o ideas (v. en igual sentido dict. de la Procuración General de la Nación, in re: "Blum, Nicolás Ricardo y Cartagena, Juan Manuel s/ causa n° 4052", del 27/02/03), extremo que sella la inaplicabilidad de la disminución empleada por la parte actora, puesto que sólo debe considerarse la pericia contable elaborada a fojas 329/337.
+
+Al respecto, cuadra recordar que la Corte Suprema de Justicia de la Nación estableció que la primera fuente de exégesis de la ley es su letra y, cuando esta no exige esfuerzo de interpretación, debe ser aplicada directamente, con prescindencia de consideraciones que excedan las circunstancias del caso expresamente contempladas por aquella, no debiendo llegar al extremo de exigir mayores requisitos que los que aquella impone (CSJN, Fallos: 319:2617; 339:1514).
+
+VI.3.- Por lo expuesto, corresponde, en primer término, desestimar sendas liquidaciones practicadas por la demandada, a fojas 489/506, y por la actora, a fojas 508, y, en segundo término, establecer como base del pleito para regular los honorarios de los profesionales intervinientes la suma de $2.039.363,95 (conf. pericia de fs. 329/337).
+
+Firme que quede la presente resolución, hágase saber a los letrados que deberán peticionar la regulación pertinente.
+
+
+
+
+VII.- Respecto a las costas, corresponde distribuirlas en el orden causado, habida cuenta de la existencia de vencimiento parcial y mutuo (conf. art. 71 del CPCCN).
+
+
+
+
+A tenor de las consideraciones vertidas, SE RESUELVE: 1) Rechazar el cálculo efectuado por la Dirección Nacional de Vialidad a fojas 489/506; 2) Rechazar el cálculo confeccionado por Fontana Nicastro SAC a fojas 508; 3) Establecer como base del pleito para regular los honorarios de los profesionales intervinientes el monto de $2.039.363,95; y 4) Distribuir las costas por su orden, habida cuenta de la existencia de vencimiento parcial y mutuo (conf. art. 71 del CPCCN).
+
+Regístrese y notifíquese.
+
+
+
+
+Walter LARA CORREA
+
+Juez Federal (PRS)
+      </div>
+    </td>
   </tr>
-  <tr>
+<tr>
     <td>1250/2022</td>
     <td>CORREDOR DE INTEGRACION PAMPEANA C/ EN DNV S/ PROCESO DE CONOCIMIENTO</td>
     <td>Firmado</td>
@@ -216,9 +372,55 @@
   <td>4/11/2022</td>
   <td>CADUCIDAD</td>
   <td>JF</td>
-  <td>7/11/2022</td>
-  <td>terminado</td>
-</tr>
+  <td><a href="http://scw.pjn.gov.ar/scw/viewer.seam?id=H0XCL6Z30X6g%2B53C8DMITkVYOo6mUtoCW4v2RUUhT3E%3D&tipoDoc=despacho&cid=4965" target="_blank">Link</a>
+  <td>
+      <div class="expandable-text">
+
+			I.- Mediante la presentación de fojas 50/51 (conf. surge del sistema informático Lex 100, al cual se hará referencia en lo sucesivo) la Dirección Nacional de Migraciones, sin consentir acto alguno, acusa la caducidad de instancia en los términos de los artículos 310 y 315 del Código Procesal Civil y Comercial de la Nación.
+			En lo que aquí importa, señala que desde la providencia del 22/11/19 (v. fs. 46) no hubo acto impulsorio alguno en la causa, por lo que -según su consideración- habría transcurrido el plazo legal establecido en la normativa invocada.
+
+			II.- Previo a tratar lo peticionado, mediante providencia del 12/10/22, el Tribunal ordena a la parte demandada que incorpore digitalmente el recurso judicial oportunamente interpuesto por el actor (v. fs. 52). 
+			El 12/10/22, fue cumplida dicha encomienda (v. fs. 53/60).
+			
+			III.- A fojas 61, corrido el traslado del acuse de caducidad, el actor guardó silencio.
+
+			IV.- Así las cosas, corresponde dar tratamiento al acuse de perención de instancia introducido por la Dirección Nacional de Migraciones. 
+			IV.1.- En primer lugar, resulta necesaria labor recordar que el artículo 310 del Código Procesal Civil y Comercial de la Nación establece, en lo que aquí interesa, que “[s]e producirá la caducidad de instancia cuando no se instare su curso dentro de los siguientes plazos: 1. De seis meses, en primera o única instancia.”. 
+			IV.2.- En razón de ello, cabe destacar que la instancia es el conjunto de actos procesales que realizan las partes para obtener la decisión judicial de un litigio y que se suceden desde la interposición de una demanda, o la petición que abre una etapa incidental, un proceso o la concesión de un recurso, hasta la notificación de la respectiva sentencia o resolución. Así, toda petición inicial de un proceso, trámite o procedimiento dirigido a un juez o tribunal para que satisfaga un interés legítimo de quien acciona es –en general– instancia y, a partir de ello, comienza para el interesado la carga de impulsar el procedimiento (conf. Sala III, in rebus: “ONAB c/ Navarrete Celia s/ proceso de ejecución”, del 13/8/08; “BCRA- Resols 76/05 y 203/05 c/ Gaillard Raúl Augusto Alfonso s/ ejecución fiscal”, del 14/2/11; “Lisotto Ricardo Fabián c/ EN- Mº Justicia- PFA- Dto 2744/93 884/08 s/ personal militar y civil de las FFAA y de Seg”, del 22/2/13, entre otros). 
+			En tal sentido, es dable señalar que la inactividad procesal que configura el presupuesto de caducidad, se exterioriza en la no ejecución de acto alguno que tenga efecto impulsorio por ambas partes o por el órgano jurisdiccional a computarse desde la fecha desde la última petición de la parte o resolución o actuación del juez, del Tribunal o actos provenientes de auxiliares de unos u otros (conf. Palacios, Lindo E. “Manual de Dereho Procesal Civil”, Tomo II, Buenos Aires, Abeledo Perrot, 1986, p. 56). 
+			IV.3.- En este contexto, la Corte Suprema de Justicia de la Nación sostuvo que la parte que promueve un proceso asume la carga de urgir su desarrollo en virtud del conocido principio dispositivo, sin perjuicio de las facultades conferidas al órgano judicial, y únicamente queda relevada de aquella cuando el proceso estuviese pendiente de alguna decisión y la demora en dictarla fuere imputable al Tribunal, o la prosecución del trámite dependiere de una actividad impuesta a los funcionarios que indica el artículo 313, inciso 3° del Código Procesal Civil y Comercial de la Nación (conf. Fallos: 317:369; 330:243; causa P. 942. XLVIII “Petroquímica Comodoro Rivadavia S.A. c/ Río Negro, Provincia de s/acción declarativa de inconstitucionalidad”, del 23/6/2015; entre otros).
+
+			IV.4.-	En este marco, es menester precisar que revestirán la calidad de actos interruptivos de la caducidad, todos aquellos que siendo idóneos al estado de las actuaciones resulten útiles para hacer avanzar el proceso de una a otra de las etapas, hacia su fin natural que es la sentencia.  
+			La idoneidad que se requiere para interrumpir el curso de la perención es específica y difiere de la general de los actos procesales, debiendo servir para que el proceso o la instancia avance hacia su fin natural (conf. Podetti, José Ramiro, “Tratado de los actos procesales”, tomo II, Buenos Aires, Ediar, 1955, págs. 366 y 188). A su vez, las diligencias o pedidos que no hacen avanzar la causa, que no la sacan del estancamiento en que puede hallarse sumida, que no sirven para que el proceso se dinamice no son actos interruptivos del plazo de caducidad de la instancia. 			
+			Asimismo, Couture alude que se “[d]enomina impulso procesal al fenómeno por virtud del cual se asegura la continuidad de los actos procesales y su dirección hacia el fallo definitivo”; y agrega luego que el “impulso procesal se obtiene mediante una serie de situaciones jurídicas que unas veces afectan a las partes y otras al tribunal”. El “impulso procesal está dado en relación de tiempo y no de espacio”; y cuando “hablamos de que el proceso se desenvuelve avanzando desde la demanda hasta la sentencia, utilizamos tan sólo una metáfora, pues la relación es de carácter puramente temporal: una relación de pasado presente -futuro. `Avanzar´ significa ir realizando etapas que se van desplazando hacia lo pasado y preparar otras que se anuncian en lo porvenir. El proceso no es una cosa hecha, un camino que deba recorrerse, sino una cosa que debe hacerse a lo largo del tiempo”; y los “plazos son, pues, los lapsos dados para la realización de los actos procesales”; durante “ellos deben satisfacerse las cargas si no se desea soportar las consecuencias enojosas del incumplimiento. El tiempo crea, modifica y extingue también los derechos procesales concretos” (conf. Couture, Eduardo, “Fundamentos del derecho procesal civil”, 3º ed., Buenos Aires, Depalma, 1958, págs. 172/174).
+
+			V.- Sobre esta base, es dable destacar que de la compulsa de las actuaciones surge que:
+			(i) El 07/10/19, el Sr. FEI interpuso recurso directo en los términos de la Ley Nº 25.871 (v. fs. 1/9, del expte. en formato papel).
+			(ii) El 09/10/19, la Dirección Nacional de Migraciones elevó el recurso interpuesto y, a su vez, cumplió con el informe previsto en el artículo 69 septies de la norma citada (v. fs. 10/43, del expte. en formato papel).
+			(iii) El 25/10/19, el Tribunal ordenó que se cumpla con las Acordadas Nros. 7/94, 11/14, y 3/15 (v. fs.44, del expte. en formato papel).
+			(iv) El 11/11/19, la demandada cumplió con la Acordada 7/94 y acompañó copia del expediente administrativo N° 314562019 en soporte papel (v. fs. 45, del expte. en formato papel).
+			(v) El 22/11/19, el Tribunal, en lo que aquí importa, ordenó la reserva del expediente acompañado e hizo saber a la actora que cumpla con lo dispuesto a fojas 44 (v. fs. 46, del expte. en formato papel).	
+			(vi) El 04/10/22, la Dirección Nacional de Migraciones interpuso el acuse que aquí se debate (v. fs. 50/51, del expte. en formato papel).
+			V.1.- En consideración de lo expuesto, cabe indicar que a fojas 45 la demandada cumplió parcialmente con lo ordenado a fojas 44, toda vez que el expediente administrativo N° 314562019 fue incorporado a la causa en soporte papel, cuando debió adjuntarse, simultáneamente, al sistema informático (Lex100) en formato digital, conforme lo establece la Acordada N° 3/15 y fue exigido por el Tribunal.
+			V.2.- En función de ello, resulta ostensible que si bien desde la providencia del 22/11/19, hasta el acuse introducido el 04/10/22, se encuentra configurado el plazo perentorio establecido en la norma citada, dicho transcurso del tiempo no puede imputársele a la parte actora. 
+			Ello es así, toda vez que el acto procesal pendiente a fojas 44 constituye una responsabilidad que pesa sobre la demandada, razón por la cual el acuse formulado no puede prosperar en autos (conf. Fallos: 317:369; 330:243; entre otros).	
+		
+			VI.- En virtud de la exposición que antecede, corresponde rechazar el acuse de perención de instancia incoado por la Dirección Nacional de Migraciones.
+
+			VII.- Por otro lado, y sin perjuicio de lo dispuesto en el artículo 42 del Código de Rito, toda vez que frente al traslado conferido en autos en el domicilio electrónico constituido en el sub lite, la parte actora guardó silencio, a los fines de evitar un menoscabo en el derecho de defensa y resguardar el debido proceso del Sr. FEI, líbrese cédula en soporte papel por Secretaría al Sr. Wang FEI al domicilio indicado en el escrito de inicio (Sarmiento 1426, piso 3°, Ciudad Autónoma de Buenos Aires) a fin de notificar la presente resolución.
+
+			VIII.- En cuanto a las costas de la presente incidencia, corresponde distribuirlas por su orden, atento a las particularidades del caso (conf. arts. 68 y 69 del C.P.C.C.N.).
+
+			En tales condiciones, SE RESUELVE: 1) Rechazar el planteo de caducidad de instancia interpuesto por la Dirección Nacional de Migraciones; 2) Imponer las costas en el orden causado, en atención a la forma en que se decide (conf. arts. 68 y 69 del C.P.C.C.N.); y 3) Librar cédula en soporte papel por Secretaría al Sr. Wang FEI al domicilio indicado en el escrito de inicio (Sarmiento 1426, piso 3°, Ciudad Autónoma de Buenos Aires) a fin de notificar la presente resolución. 
+
+			Regístrese y notifíquese.
+
+Walter LARA CORREA 
+							         Juez Federal (PRS)
+
+      </div>
+    </td>
+  </tr>
 <tr>
   <td>7357/2021</td>
   <td>OVSEJEVICH, LUIS C/ EN - AFIP - LEY 27605 S/PROCESO DE CONOCIMIENTO</td>
@@ -226,9 +428,287 @@
   <td>7/2/2023</td>
   <td>CONEXIDAD</td>
   <td>LW</td>
-  <td>8/11/2022</td>
-  <td>terminado</td>
-</tr>
+  <td>Restringido</td>
+  <td>
+      <div class="expandable-text">
+I.- Expediente CAF 17100/2020 “OVSEJEVICH,
+LUIS c/ EN - AFIP Ley 27605 s/ PROCESO DE CONOCIMIENTO”:
+(i) A fojas 3/24 (conforme surge del sistema
+informático Lex 100, al cual se hará referencia en lo sucesivo), el Sr. Luis
+OVSEJEVICH inicia demanda, en los términos del artículo 322 del
+Código Procesal Civil y Comercial de la Nación, ante este Juzgado,
+contra el Poder Ejecutivo Nacional-Administración Federal de Ingresos
+Públicos, con el objeto que se declare la inconstitucionalidad del artículo
+28 de la Ley N° 27.541 y del artículo 9º del Decreto Reglamentario N°
+99/19, que incrementó la alícuota del Impuesto sobre los Bienes
+Personales para el período fiscal 2019.
+(ii) A fojas 46/55, la parte actora informa el inicio de
+un procedimiento de fiscalización, y solicita el dictado de una medida
+cautelar.
+(iii) A fojas 57/64, amplia demanda, atento a que se
+produjo el vencimiento del período fiscal del Impuesto sobre los Bienes
+Personales, y solicita lo mismo que peticionó al interponer la demanda,
+pero respecto del periodo fiscal 2020, ya que la situación -a su entenderresultaría análoga.
+(iv) A fojas 305/350, el Estado Nacional contesta
+demanda y solicita el rechazo de la acción incoada (conf. aclaración
+realizada a fojas 352).
+(v) A fojas 363, el Juzgado rechaza la medida
+cautelar peticionada.
+(vi) A fojas 364, atento a la conexidad solicitada en el
+expediente N° 7.357/2021, caratulado “OVSEJEVICH, LUIS c/ EN - AFIP
+Ley 27605 s/ PROCESO DE CONOCIMIENTO”, que tramitaba ante el
+Juzgado N° 4 del fuero, se ordena remitir de manera conjunta las causas
+al Sr. Fiscal Federal a fin de que se expida sobre la acumulación de las
+mismas.
+(vii) A fojas 365, el Ministerio Público Fiscal se remite
+al dictamen elaborado en el marco de la causa N° 7.357/2021, por el cual
+consideró que debía declararse la conexidad entre las causas.
+(viii) A fojas 384, pasan los autos a resolver.
+(ix) A fojas 385, se suspende el llamado de autos a
+resolver y se corre vista al Fiscal Federal junto con la causa N° 52.959/22
+titulada, “OVSEJEVICH, LUIS c/ EN - AFIP Ley 27667 s/ PROCESO DE
+CONOCIMIENTO”, para que se expida sobre la conexidad allí solicitada.
+(x) A fojas 386, el Fiscal Federal se remite al
+dictamen elaborado en el marco de la causa N° 52.959/2022, en el cual
+también sostiene que debe declararse la conexidad de las causas.
+(xi) A fojas 388, pasa los autos a resolver las
+conexidades planteadas. y pasan los autos a resolver.
+Poder Judicial de la Nación
+JUZGADO CONTENCIOSO ADMINISTRATIVO
+FEDERAL 7
+(xii) A fojas 389/392, sin perjuicio de lo expuesto
+precedentemente, la Administración Federal de Ingresos Públicos se
+opone a la conexidad formulada con la causa N° 52.959/22 titulada
+“OVSEJEVICH, LUIS c/ EN - AFIP Ley 27667 s/ PROCESO DE
+CONOCIMIENTO”, dado que -en esta última- no hubo traslado de la
+demanda y no tuvo oportunidad de intervenir.
+II.- Expediente CAF 7357/2021 “OVSEJEVICH, LUIS
+c/ EN - AFIP Ley 27605 s/ PROCESO DE CONOCIMIENTO”:
+(i) A fojas 26/47, el Sr. Luis OVSEJEVICH promueve,
+por ante el Juzgado N° 4 del fuero, una acción declarativa de certeza en
+contra del Poder Ejecutivo Nacional - Administración Federal de Ingresos
+Públicos a fin de hacer cesar el estado de incertidumbre existente con
+relación a la legitimidad y aplicación en el caso concreto de la Ley N°
+27.605 y demás normas aplicables por las cuales se creó y puso en
+vigencia el “Aporte Solidario y Extraordinario para Ayudar a Morigerar los
+Efectos de la Pandemia”, por el período fiscal 2019.
+(ii) A fojas 175/226, la Administración Federal de
+Ingresos Públicos contesta demanda y pide la acumulación con la causa
+17.100/2020 caratulada “OVSEJEVICH, LUIS c/ EN - AFIP Y OTRO s/
+PROCESO DE CONOCIMIENTO”.
+Al respecto, sostiene que, entre las causas, existen
+premisas de hecho comunes e identidad de partes y que, si bien los
+planteos no resultan análogos en su totalidad, la existencia de elementos
+conexos, conlleva a que resulte necesario el tratamiento de ambos
+procesos en conjunto, en tanto su discusión por separado podría
+conllevar a un dispendio jurisdiccional, e incluso a sentencias
+contradictorias.
+(iii) A fojas 227/234, la actora amplia demanda y
+solicita una medida cautelar a los fines de que se haga cesar el estado
+de incertidumbre existente con relación a la legitimidad y aplicación en el
+caso concreto de la Ley N° 27.605, respecto al “Aporte Solidario y
+Extraordinario para Ayudar a Morigerar los Efectos de la Pandemia”, por
+el período fiscal 2020.
+(iv) En dicho marco, el Juzgado N° 4 del fuero remite
+la causa N° 7.357/2021 a este Tribunal y, a fojas 239/240, la actora
+contesta y presta conformidad con la acumulación de ambos procesos,
+en tanto “existen elementos conexos entre las demandas interpuestas”.
+(v) A fojas 241, se remite la causa al Señor Fiscal
+Federal, a fin de que se expida respecto de la conexidad solicitada, quien
+-a fojas 242/247- dictamina que se debe declarar la conexidad entre la
+causa N° 7.357/2021 “OVSEJEVICH, LUIS c/ EN - AFIP Ley 27605 s/
+PROCESO DE CONOCIMIENTO” y el expediente que tramita por ante
+este Juzgado (N° 17.100/2020).
+(vi) A fojas 248, pasan los autos a resolver. No
+obstante, a fojas 249, se suspende el llamado, atento a la denuncia de
+una nueva conexidad solicitada en el marco de la causa N° 52.959/2022,
+caratulada “OVSEJEVICH, Luis C/ EN-AFIP-LEY 27667 S/ PROCESO
+DE CONOCIMIENTO”, con la causa N° 17.100/2020.
+(vii) En virtud de lo dispuesto en las causas Nros.
+17.100/20 y 52.959/22, a fojas 250, se reanuda el llamado de autos a
+resolver.
+(viii) A fojas 254/257, sin perjuicio de lo expuesto
+precedentemente, la demandada se opone a la última conexidad
+opuesta, puesto que no fue citada a comparecer en la referida causa.
+III.- Expediente CAF 52.959/2022 “OVSEJEVICH,
+LUIS c/ EN - AFIP Ley 27667 s/ PROCESO DE CONOCIMIENTO”:
+(i) A fojas 15/40 el Sr. OVSEJEVICH inicia demanda
+ante el Juzgado N° 11 del fuero, contra la Administración Federal de
+Ingresos Públicos, para que se declare la inconstitucionalidad del
+régimen de alícuotas diferenciales e incrementadas sobre los bienes
+Poder Judicial de la Nación
+JUZGADO CONTENCIOSO ADMINISTRATIVO
+FEDERAL 7
+situados en el exterior que establece la Ley N° 27.667, para el periodo
+fiscal 2021. En ese mismo acto, solicita la acumulación del proceso, con
+la causa N° 17100/2020, que tramita por ante este Juzgado.
+(ii) En virtud de la petición realizada en el escrito de
+inicio, a fojas 41, el Juzgado N° 11 remite la causa a este Tribunal, para
+que se expida sobre la acumulación formulada.
+(iii) De tal manera que, a fojas 45, se le da vista al
+Fiscal Federal, quien a fojas 46/49 destaca que la causa resulta análoga
+a la N° 17100/20, con la salvedad del período fiscal reclamado y las
+modificaciones al gravamen a los bienes personales incorporados por la
+Ley N° 27.667. En esos términos, opina que se debe hacer lugar a la
+acumulación incoada.
+(iv) Finalmente, a fojas 52, pasan los autos a
+resolver.
+IV.- Así planteada la cuestión, cabe tener en cuenta
+que el Código Procesal Civil y Comercial de la Nación en su artículo 188,
+establece que “[p]rocederá la acumulación de procesos cuando hubiere
+sido admisible la acumulación subjetiva de acciones de conformidad con
+lo prescripto en el artículo 88 y, en general, siempre que la sentencia que
+haya de dictarse en uno de ellos pudiere producir efectos de cosa
+juzgada en otro u otros. Se requerirá, además: 1) Que los procesos se
+encuentren en la misma instancia. 2) Que el juez a quien corresponda
+entender en los procesos acumulados sea competente por razón de la
+materia. A los efectos de este inciso no se considerarán distintas las
+materias civil y comercial. 3) Que puedan sustanciarse los mismos
+trámites. Sin embargo, podrán acumularse DOS (2) o más procesos de
+conocimiento, o DOS (2) o más procesos de ejecución sujetos a distintos
+trámites, cuando su acumulación resultare indispensable en razón de
+concurrir la circunstancia prevista en la última parte del primer párrafo.
+En tal caso, el juez determinará el procedimiento que corresponde
+imprimir al juicio acumulado. 4) Que el estado de las causas permita su
+sustanciación conjunta, sin producir demora perjudicial e injustificada en
+el trámite del o de los que estuvieren más avanzados”.
+Asimismo, es dable señalar que la conexidad
+procede siempre que la sentencia que haya de dictarse en un pleito
+pudiere producir efectos de cosa juzgada en el otro y el consiguiente
+escándalo jurídico que originaría el tratamiento autónomo de
+pretensiones que se encuentran vinculadas por la causa o por el objeto.
+Su finalidad estriba que en aquellas causas que tienen entre sí una
+vinculación jurídica evidente, sea el mismo juez el que conozca a fin de
+evitar resoluciones contradictorias (conf. Finochietto, Eduardo, Arazi,
+Rolando; Cód. Procesal Civil y Comercial de la Nación-Comentado,
+Anotado y Concordado, Ed. Astrea 1978, T. I, pág. 517). Al respecto, se
+tiene dicho que el principal fundamento para conceder el instituto de la
+acumulación es que “[f]undamentalmente, debe explicitarse el riesgo de
+escándalo jurídico que pueda dar lugar al dictado de sentencias
+contradictorias (...) [la cual es] la principal finalidad del instituto” (Highton,
+Elena I., Areán, Beatriz A., (dir.), “Código Procesal Civil y Comercial de la
+Nación”, Tomo 3, Buenos Aires, Hammurabi, 2005, pág. 807).
+En este sentido, cabe aclarar que “[p]ueden
+acumularse dos o más procesos de conocimiento (esto es, un juicio
+ordinario y uno sumarísimo) cuando la sentencia que deba pronunciarse
+en uno de ellos pudiere producir efectos de cosa juzgada en otro u otros.
+El artículo 194 otorga la flexibilidad necesaria” (conf. Colombo, Carlos J.
+y Kiper Claudio M., “Código Procesal Civil y Comercial de la Nación:
+anotado y comentado”, Tº II, Buenos Aires, La Ley, 2006, pág. 404).
+En esta inteligencia, cabe considerar que el instituto
+de la acumulación por conexidad solo es aplicable cuando entre los
+procesos median elementos comunes e interdependientes que los
+vinculan por la causa, hallando su fundamento en la necesidad de evitar
+la eventualidad de pronunciamientos contradictorios a que pueda
+conducir la sustanciación de pretensiones conexas en procesos distintos.
+Y, la acumulación subjetiva de pretensiones procederá, entonces,
+siempre que las distintas pretensiones sean conexas en virtud de la
+causa, del objeto, o de ambos elementos a la vez, o sea, cuando se
+Poder Judicial de la Nación
+JUZGADO CONTENCIOSO ADMINISTRATIVO
+FEDERAL 7
+invoque como fundamentos de ella una misma relación jurídica o una
+misma situación de hecho (Fallos: 341:1854; 328:4450; 328:846;
+326:3541; entre otros).
+V.- Bajo los parámetros expuestos, resulta menester
+analizar si el objeto de las pretensiones de las citadas causas
+-Expedientes Nros. 17100/20, 7357/21 y 52959/22- guardan relación
+entre sí.
+A tales efectos, es dable destacar que la
+Administración Federal de Ingresos Públicos solicita la conexidad de los
+expedientes Nros. 17100/20 y del 7.357/21, en tanto manifiesta que
+ambos procesos se encuentran alcanzados por los supuestos
+establecidos en el artículo 188 del Código Procesal Civil y Comercial de
+la Nación. A su vez, se opone al planteo de conexidad efectuado por la
+parte actora respecto del expediente N° 52.959/22, por considerar que, si
+bien existe identidad de partes, el objeto de la demanda difiere en los
+períodos fiscales involucrados y en la normativa cuestionada.
+En función de ello, y con el objeto de tratar las
+acumulaciones pretendidas en estos actuados, conviene apuntar que el
+Sr. Luis OVSEJEVICH considera que las tres demandas interpuestas
+contra la Administración Federal de Ingresos Públicos, persiguen el
+objeto de declarar la inconstitucionalidad de las reformas introducidas a
+la Ley N° 23.966 y por la Ley N° 27.605 y que ambas normas se
+relacionan entre sí.
+VI.- En las condiciones descriptas, y compartiendo el
+Tribunal los argumentos vertidos por el Sr. Fiscal Federal en el dictamen
+obrante a fojas 242/247 del expediente CAF N° 7357/2021, así como en
+el obrante a fojas 46/49 del expediente N° 52959/2022, corresponde
+admitir sin más trámite las conexidades respectivamente solicitadas.
+Ello es así, por cuanto no cabe dudas de que las
+causas se hallan vinculadas por la naturaleza de las cuestiones
+involucradas, al punto tal que la sentencia a dictarse en una de ellas
+puede producir efectos de cosa juzgada respecto de la otra (conf. arts.
+188 y 190 del CPCC; Falcón, Cód. Proc. Civ. y Com de la Nación,
+Abeledo Perrot, 1994, T. II, pág. 220 y ss.; Morello-Sosa-Berizonce,
+CPCC de la Pcia. De Buenos Aires y de la Nación, Librería Editorial
+Platense, 1993, T. II-B, págs. 460 y 479/480).
+En igual sentido, cuadra agregar que en el
+Expediente N° CAF 52959/2022 no se corrió traslado y que en las
+causas Nros. 17100/2020 y 7357/2021, aun no se determinó si
+correspondía abrir las causas a prueba, puesto que se encontraba
+pendiente de resolver la acumulación opuesta.
+VII.- Por lo tanto, corresponde admitir la conexidad
+entre las causas "OVSEJEVICH, LUIS c/ EN-AFIP Y OTRO s/PROCESO
+DE CONOCIMIENTO" (expediente N° CAF 17.100/2020), “OVSEJEVICH
+Luis c/ EN – AFIP – Ley 27605 s/ Proceso De Conocimiento” (expediente
+CAF N° 7357/2021)” y “OVSEJEVICH, Luis C/ En-Afip-Ley 27667 S/
+Proceso De Conocimiento” (expediente CAF N° 52959/2022).
+Asimismo, y a los fines procurar el buen orden
+procesal entre las tres causas, se establece que los procesos
+acumulados tramitarán y se sustanciarán en el expediente N°
+17.100/2020 conforme a lo establecido en los artículos 189 y 194,
+primera parte, del CPCCN.
+A tales efectos y como consecuencia del estado de
+las causas (v. cons. VI), córrase traslado de la demanda instaurada en el
+expediente N° CAF 52959/2022, al Estado Nacional – AFIP por el
+término de treinta (30) días de conformidad con lo dispuesto por el
+artículo 338, 2da. Parte del Código Procesal. A tal fin líbrese oficio en los
+términos del artículo 400 del Código Procesal Civil y Comercial de la
+Nación o en los términos de lo dispuesto por la Acordada CSJN Nº 15/20,
+de encontrarse en el correspondiente sistema, dejándose constancia –en
+el texto del mismo– que, tratándose de una causa digital, tanto el escrito
+de inicio como la documental correspondiente se encuentran accesibles
+en el Sistema de Consultas Web, del Poder Judicial de la Nación
+(http://scw.pjn.gov.ar/ scw). Hágase saber que su diligenciamiento
+Poder Judicial de la Nación
+JUZGADO CONTENCIOSO ADMINISTRATIVO
+FEDERAL 7
+quedará a cargo del letrado, quien a tal efecto podrá optar por la vía
+electrónica que estime pertinente.
+Por todo lo expuesto, y de conformidad con lo
+dictaminado por el Sr. Fiscal Federal SE RESUELVE: 1) Admitir la
+conexidad de las causas “OVSEJEVICH Luis c/ EN – AFIP – Ley 27605
+s/ Proceso De Conocimiento” (expediente CAF N° 7.357/2021)”,
+“OVSEJEVICH, Luis C/ En-Afip-Ley 27667 S/ Proceso De Conocimiento”
+(expediente CAF N° 52.959/2022) y “OVSEJEVICH Luis C/ En-Afip-Dgi
+S/ Proceso De Conocimiento”, (expediente N°17.100/2021), que tramita
+por ante este Juzgado. 2) Disponer que las causas tramiten de manera
+conjunta en el expediente N° 17.100/21 (cfr. arts. 189 y 194, primera
+parte, del CPCCN), sin perjuicio de que se agregará en todas las causas
+copia de la presente resolución; para ello las partes deberán acompañar
+en esta última las copias digitalizada de todas las presentaciones
+realizadas en las causas Nros. 7.357/2021 y 52.959/2022 al día de la
+fecha; 3) Correr traslado de la demanda instaurada en el Expediente N°
+CAF 52959/2022, al Estado Nacional – AFIP por el término de treinta (30)
+días de conformidad con lo dispuesto por el artículo 338, segunda parte
+del Código Procesal. A tal fin líbrese oficio en los términos del artículo
+400 del Código Procesal Civil y Comercial de la Nación o en los términos
+de lo dispuesto por la Acordada CSJN Nº 15/20, de encontrarse en el
+correspondiente sistema, dejándose constancia –en el texto del mismo–
+que, tratándose de una causa digital, tanto el escrito de inicio como la
+documental correspondiente se encuentran accesibles en el Sistema de
+Consultas Web, del Poder Judicial de la Nación (http://scw.pjn.gov.ar/
+scw). Hágase saber que su diligenciamiento quedará a cargo del letrado,
+quien a tal efecto podrá optar por la vía electrónica que estime pertinente.
+ Regístrese, notifíquese a las partes, al Sr. Fiscal
+Federal y ofíciese -vía DEOX- a los Juzgado Nº 4 y N° 11 del fuero,
+haciéndoles saber lo aquí resuelto.
+ WALTER LARA CORREA
+ Juez Federal (PRS)
+</div>
+    </td>
+  </tr>
 <tr>
   <td>17100/2020</td>
   <td>OVSEJEVICH, LUIS C/ EN-AFIP Y OTRO S/PROCESO DE CONOCIMIENTO</td>
@@ -236,8 +716,285 @@
   <td>7/2/2023</td>
   <td>CONEXIDAD</td>
   <td>LW</td>
-  <td>8/11/2022</td>
-  <td>terminado</td>
+  <td>Restringido</td>
+  <td><div class="expandable-text">
+I.- Expediente CAF 17100/2020 “OVSEJEVICH,
+LUIS c/ EN - AFIP Ley 27605 s/ PROCESO DE CONOCIMIENTO”:
+(i) A fojas 3/24 (conforme surge del sistema
+informático Lex 100, al cual se hará referencia en lo sucesivo), el Sr. Luis
+OVSEJEVICH inicia demanda, en los términos del artículo 322 del
+Código Procesal Civil y Comercial de la Nación, ante este Juzgado,
+contra el Poder Ejecutivo Nacional-Administración Federal de Ingresos
+Públicos, con el objeto que se declare la inconstitucionalidad del artículo
+28 de la Ley N° 27.541 y del artículo 9º del Decreto Reglamentario N°
+99/19, que incrementó la alícuota del Impuesto sobre los Bienes
+Personales para el período fiscal 2019.
+(ii) A fojas 46/55, la parte actora informa el inicio de
+un procedimiento de fiscalización, y solicita el dictado de una medida
+cautelar.
+(iii) A fojas 57/64, amplia demanda, atento a que se
+produjo el vencimiento del período fiscal del Impuesto sobre los Bienes
+Personales, y solicita lo mismo que peticionó al interponer la demanda,
+pero respecto del periodo fiscal 2020, ya que la situación -a su entenderresultaría análoga.
+(iv) A fojas 305/350, el Estado Nacional contesta
+demanda y solicita el rechazo de la acción incoada (conf. aclaración
+realizada a fojas 352).
+(v) A fojas 363, el Juzgado rechaza la medida
+cautelar peticionada.
+(vi) A fojas 364, atento a la conexidad solicitada en el
+expediente N° 7.357/2021, caratulado “OVSEJEVICH, LUIS c/ EN - AFIP
+Ley 27605 s/ PROCESO DE CONOCIMIENTO”, que tramitaba ante el
+Juzgado N° 4 del fuero, se ordena remitir de manera conjunta las causas
+al Sr. Fiscal Federal a fin de que se expida sobre la acumulación de las
+mismas.
+(vii) A fojas 365, el Ministerio Público Fiscal se remite
+al dictamen elaborado en el marco de la causa N° 7.357/2021, por el cual
+consideró que debía declararse la conexidad entre las causas.
+(viii) A fojas 384, pasan los autos a resolver.
+(ix) A fojas 385, se suspende el llamado de autos a
+resolver y se corre vista al Fiscal Federal junto con la causa N° 52.959/22
+titulada, “OVSEJEVICH, LUIS c/ EN - AFIP Ley 27667 s/ PROCESO DE
+CONOCIMIENTO”, para que se expida sobre la conexidad allí solicitada.
+(x) A fojas 386, el Fiscal Federal se remite al
+dictamen elaborado en el marco de la causa N° 52.959/2022, en el cual
+también sostiene que debe declararse la conexidad de las causas.
+(xi) A fojas 388, pasa los autos a resolver las
+conexidades planteadas. y pasan los autos a resolver.
+Poder Judicial de la Nación
+JUZGADO CONTENCIOSO ADMINISTRATIVO
+FEDERAL 7
+(xii) A fojas 389/392, sin perjuicio de lo expuesto
+precedentemente, la Administración Federal de Ingresos Públicos se
+opone a la conexidad formulada con la causa N° 52.959/22 titulada
+“OVSEJEVICH, LUIS c/ EN - AFIP Ley 27667 s/ PROCESO DE
+CONOCIMIENTO”, dado que -en esta última- no hubo traslado de la
+demanda y no tuvo oportunidad de intervenir.
+II.- Expediente CAF 7357/2021 “OVSEJEVICH, LUIS
+c/ EN - AFIP Ley 27605 s/ PROCESO DE CONOCIMIENTO”:
+(i) A fojas 26/47, el Sr. Luis OVSEJEVICH promueve,
+por ante el Juzgado N° 4 del fuero, una acción declarativa de certeza en
+contra del Poder Ejecutivo Nacional - Administración Federal de Ingresos
+Públicos a fin de hacer cesar el estado de incertidumbre existente con
+relación a la legitimidad y aplicación en el caso concreto de la Ley N°
+27.605 y demás normas aplicables por las cuales se creó y puso en
+vigencia el “Aporte Solidario y Extraordinario para Ayudar a Morigerar los
+Efectos de la Pandemia”, por el período fiscal 2019.
+(ii) A fojas 175/226, la Administración Federal de
+Ingresos Públicos contesta demanda y pide la acumulación con la causa
+17.100/2020 caratulada “OVSEJEVICH, LUIS c/ EN - AFIP Y OTRO s/
+PROCESO DE CONOCIMIENTO”.
+Al respecto, sostiene que, entre las causas, existen
+premisas de hecho comunes e identidad de partes y que, si bien los
+planteos no resultan análogos en su totalidad, la existencia de elementos
+conexos, conlleva a que resulte necesario el tratamiento de ambos
+procesos en conjunto, en tanto su discusión por separado podría
+conllevar a un dispendio jurisdiccional, e incluso a sentencias
+contradictorias.
+(iii) A fojas 227/234, la actora amplia demanda y
+solicita una medida cautelar a los fines de que se haga cesar el estado
+de incertidumbre existente con relación a la legitimidad y aplicación en el
+caso concreto de la Ley N° 27.605, respecto al “Aporte Solidario y
+Extraordinario para Ayudar a Morigerar los Efectos de la Pandemia”, por
+el período fiscal 2020.
+(iv) En dicho marco, el Juzgado N° 4 del fuero remite
+la causa N° 7.357/2021 a este Tribunal y, a fojas 239/240, la actora
+contesta y presta conformidad con la acumulación de ambos procesos,
+en tanto “existen elementos conexos entre las demandas interpuestas”.
+(v) A fojas 241, se remite la causa al Señor Fiscal
+Federal, a fin de que se expida respecto de la conexidad solicitada, quien
+-a fojas 242/247- dictamina que se debe declarar la conexidad entre la
+causa N° 7.357/2021 “OVSEJEVICH, LUIS c/ EN - AFIP Ley 27605 s/
+PROCESO DE CONOCIMIENTO” y el expediente que tramita por ante
+este Juzgado (N° 17.100/2020).
+(vi) A fojas 248, pasan los autos a resolver. No
+obstante, a fojas 249, se suspende el llamado, atento a la denuncia de
+una nueva conexidad solicitada en el marco de la causa N° 52.959/2022,
+caratulada “OVSEJEVICH, Luis C/ EN-AFIP-LEY 27667 S/ PROCESO
+DE CONOCIMIENTO”, con la causa N° 17.100/2020.
+(vii) En virtud de lo dispuesto en las causas Nros.
+17.100/20 y 52.959/22, a fojas 250, se reanuda el llamado de autos a
+resolver.
+(viii) A fojas 254/257, sin perjuicio de lo expuesto
+precedentemente, la demandada se opone a la última conexidad
+opuesta, puesto que no fue citada a comparecer en la referida causa.
+III.- Expediente CAF 52.959/2022 “OVSEJEVICH,
+LUIS c/ EN - AFIP Ley 27667 s/ PROCESO DE CONOCIMIENTO”:
+(i) A fojas 15/40 el Sr. OVSEJEVICH inicia demanda
+ante el Juzgado N° 11 del fuero, contra la Administración Federal de
+Ingresos Públicos, para que se declare la inconstitucionalidad del
+régimen de alícuotas diferenciales e incrementadas sobre los bienes
+Poder Judicial de la Nación
+JUZGADO CONTENCIOSO ADMINISTRATIVO
+FEDERAL 7
+situados en el exterior que establece la Ley N° 27.667, para el periodo
+fiscal 2021. En ese mismo acto, solicita la acumulación del proceso, con
+la causa N° 17100/2020, que tramita por ante este Juzgado.
+(ii) En virtud de la petición realizada en el escrito de
+inicio, a fojas 41, el Juzgado N° 11 remite la causa a este Tribunal, para
+que se expida sobre la acumulación formulada.
+(iii) De tal manera que, a fojas 45, se le da vista al
+Fiscal Federal, quien a fojas 46/49 destaca que la causa resulta análoga
+a la N° 17100/20, con la salvedad del período fiscal reclamado y las
+modificaciones al gravamen a los bienes personales incorporados por la
+Ley N° 27.667. En esos términos, opina que se debe hacer lugar a la
+acumulación incoada.
+(iv) Finalmente, a fojas 52, pasan los autos a
+resolver.
+IV.- Así planteada la cuestión, cabe tener en cuenta
+que el Código Procesal Civil y Comercial de la Nación en su artículo 188,
+establece que “[p]rocederá la acumulación de procesos cuando hubiere
+sido admisible la acumulación subjetiva de acciones de conformidad con
+lo prescripto en el artículo 88 y, en general, siempre que la sentencia que
+haya de dictarse en uno de ellos pudiere producir efectos de cosa
+juzgada en otro u otros. Se requerirá, además: 1) Que los procesos se
+encuentren en la misma instancia. 2) Que el juez a quien corresponda
+entender en los procesos acumulados sea competente por razón de la
+materia. A los efectos de este inciso no se considerarán distintas las
+materias civil y comercial. 3) Que puedan sustanciarse los mismos
+trámites. Sin embargo, podrán acumularse DOS (2) o más procesos de
+conocimiento, o DOS (2) o más procesos de ejecución sujetos a distintos
+trámites, cuando su acumulación resultare indispensable en razón de
+concurrir la circunstancia prevista en la última parte del primer párrafo.
+En tal caso, el juez determinará el procedimiento que corresponde
+imprimir al juicio acumulado. 4) Que el estado de las causas permita su
+sustanciación conjunta, sin producir demora perjudicial e injustificada en
+el trámite del o de los que estuvieren más avanzados”.
+Asimismo, es dable señalar que la conexidad
+procede siempre que la sentencia que haya de dictarse en un pleito
+pudiere producir efectos de cosa juzgada en el otro y el consiguiente
+escándalo jurídico que originaría el tratamiento autónomo de
+pretensiones que se encuentran vinculadas por la causa o por el objeto.
+Su finalidad estriba que en aquellas causas que tienen entre sí una
+vinculación jurídica evidente, sea el mismo juez el que conozca a fin de
+evitar resoluciones contradictorias (conf. Finochietto, Eduardo, Arazi,
+Rolando; Cód. Procesal Civil y Comercial de la Nación-Comentado,
+Anotado y Concordado, Ed. Astrea 1978, T. I, pág. 517). Al respecto, se
+tiene dicho que el principal fundamento para conceder el instituto de la
+acumulación es que “[f]undamentalmente, debe explicitarse el riesgo de
+escándalo jurídico que pueda dar lugar al dictado de sentencias
+contradictorias (...) [la cual es] la principal finalidad del instituto” (Highton,
+Elena I., Areán, Beatriz A., (dir.), “Código Procesal Civil y Comercial de la
+Nación”, Tomo 3, Buenos Aires, Hammurabi, 2005, pág. 807).
+En este sentido, cabe aclarar que “[p]ueden
+acumularse dos o más procesos de conocimiento (esto es, un juicio
+ordinario y uno sumarísimo) cuando la sentencia que deba pronunciarse
+en uno de ellos pudiere producir efectos de cosa juzgada en otro u otros.
+El artículo 194 otorga la flexibilidad necesaria” (conf. Colombo, Carlos J.
+y Kiper Claudio M., “Código Procesal Civil y Comercial de la Nación:
+anotado y comentado”, Tº II, Buenos Aires, La Ley, 2006, pág. 404).
+En esta inteligencia, cabe considerar que el instituto
+de la acumulación por conexidad solo es aplicable cuando entre los
+procesos median elementos comunes e interdependientes que los
+vinculan por la causa, hallando su fundamento en la necesidad de evitar
+la eventualidad de pronunciamientos contradictorios a que pueda
+conducir la sustanciación de pretensiones conexas en procesos distintos.
+Y, la acumulación subjetiva de pretensiones procederá, entonces,
+siempre que las distintas pretensiones sean conexas en virtud de la
+causa, del objeto, o de ambos elementos a la vez, o sea, cuando se
+Poder Judicial de la Nación
+JUZGADO CONTENCIOSO ADMINISTRATIVO
+FEDERAL 7
+invoque como fundamentos de ella una misma relación jurídica o una
+misma situación de hecho (Fallos: 341:1854; 328:4450; 328:846;
+326:3541; entre otros).
+V.- Bajo los parámetros expuestos, resulta menester
+analizar si el objeto de las pretensiones de las citadas causas
+-Expedientes Nros. 17100/20, 7357/21 y 52959/22- guardan relación
+entre sí.
+A tales efectos, es dable destacar que la
+Administración Federal de Ingresos Públicos solicita la conexidad de los
+expedientes Nros. 17100/20 y del 7.357/21, en tanto manifiesta que
+ambos procesos se encuentran alcanzados por los supuestos
+establecidos en el artículo 188 del Código Procesal Civil y Comercial de
+la Nación. A su vez, se opone al planteo de conexidad efectuado por la
+parte actora respecto del expediente N° 52.959/22, por considerar que, si
+bien existe identidad de partes, el objeto de la demanda difiere en los
+períodos fiscales involucrados y en la normativa cuestionada.
+En función de ello, y con el objeto de tratar las
+acumulaciones pretendidas en estos actuados, conviene apuntar que el
+Sr. Luis OVSEJEVICH considera que las tres demandas interpuestas
+contra la Administración Federal de Ingresos Públicos, persiguen el
+objeto de declarar la inconstitucionalidad de las reformas introducidas a
+la Ley N° 23.966 y por la Ley N° 27.605 y que ambas normas se
+relacionan entre sí.
+VI.- En las condiciones descriptas, y compartiendo el
+Tribunal los argumentos vertidos por el Sr. Fiscal Federal en el dictamen
+obrante a fojas 242/247 del expediente CAF N° 7357/2021, así como en
+el obrante a fojas 46/49 del expediente N° 52959/2022, corresponde
+admitir sin más trámite las conexidades respectivamente solicitadas.
+Ello es así, por cuanto no cabe dudas de que las
+causas se hallan vinculadas por la naturaleza de las cuestiones
+involucradas, al punto tal que la sentencia a dictarse en una de ellas
+puede producir efectos de cosa juzgada respecto de la otra (conf. arts.
+188 y 190 del CPCC; Falcón, Cód. Proc. Civ. y Com de la Nación,
+Abeledo Perrot, 1994, T. II, pág. 220 y ss.; Morello-Sosa-Berizonce,
+CPCC de la Pcia. De Buenos Aires y de la Nación, Librería Editorial
+Platense, 1993, T. II-B, págs. 460 y 479/480).
+En igual sentido, cuadra agregar que en el
+Expediente N° CAF 52959/2022 no se corrió traslado y que en las
+causas Nros. 17100/2020 y 7357/2021, aun no se determinó si
+correspondía abrir las causas a prueba, puesto que se encontraba
+pendiente de resolver la acumulación opuesta.
+VII.- Por lo tanto, corresponde admitir la conexidad
+entre las causas "OVSEJEVICH, LUIS c/ EN-AFIP Y OTRO s/PROCESO
+DE CONOCIMIENTO" (expediente N° CAF 17.100/2020), “OVSEJEVICH
+Luis c/ EN – AFIP – Ley 27605 s/ Proceso De Conocimiento” (expediente
+CAF N° 7357/2021)” y “OVSEJEVICH, Luis C/ En-Afip-Ley 27667 S/
+Proceso De Conocimiento” (expediente CAF N° 52959/2022).
+Asimismo, y a los fines procurar el buen orden
+procesal entre las tres causas, se establece que los procesos
+acumulados tramitarán y se sustanciarán en el expediente N°
+17.100/2020 conforme a lo establecido en los artículos 189 y 194,
+primera parte, del CPCCN.
+A tales efectos y como consecuencia del estado de
+las causas (v. cons. VI), córrase traslado de la demanda instaurada en el
+expediente N° CAF 52959/2022, al Estado Nacional – AFIP por el
+término de treinta (30) días de conformidad con lo dispuesto por el
+artículo 338, 2da. Parte del Código Procesal. A tal fin líbrese oficio en los
+términos del artículo 400 del Código Procesal Civil y Comercial de la
+Nación o en los términos de lo dispuesto por la Acordada CSJN Nº 15/20,
+de encontrarse en el correspondiente sistema, dejándose constancia –en
+el texto del mismo– que, tratándose de una causa digital, tanto el escrito
+de inicio como la documental correspondiente se encuentran accesibles
+en el Sistema de Consultas Web, del Poder Judicial de la Nación
+(http://scw.pjn.gov.ar/ scw). Hágase saber que su diligenciamiento
+Poder Judicial de la Nación
+JUZGADO CONTENCIOSO ADMINISTRATIVO
+FEDERAL 7
+quedará a cargo del letrado, quien a tal efecto podrá optar por la vía
+electrónica que estime pertinente.
+Por todo lo expuesto, y de conformidad con lo
+dictaminado por el Sr. Fiscal Federal SE RESUELVE: 1) Admitir la
+conexidad de las causas “OVSEJEVICH Luis c/ EN – AFIP – Ley 27605
+s/ Proceso De Conocimiento” (expediente CAF N° 7.357/2021)”,
+“OVSEJEVICH, Luis C/ En-Afip-Ley 27667 S/ Proceso De Conocimiento”
+(expediente CAF N° 52.959/2022) y “OVSEJEVICH Luis C/ En-Afip-Dgi
+S/ Proceso De Conocimiento”, (expediente N°17.100/2021), que tramita
+por ante este Juzgado. 2) Disponer que las causas tramiten de manera
+conjunta en el expediente N° 17.100/21 (cfr. arts. 189 y 194, primera
+parte, del CPCCN), sin perjuicio de que se agregará en todas las causas
+copia de la presente resolución; para ello las partes deberán acompañar
+en esta última las copias digitalizada de todas las presentaciones
+realizadas en las causas Nros. 7.357/2021 y 52.959/2022 al día de la
+fecha; 3) Correr traslado de la demanda instaurada en el Expediente N°
+CAF 52959/2022, al Estado Nacional – AFIP por el término de treinta (30)
+días de conformidad con lo dispuesto por el artículo 338, segunda parte
+del Código Procesal. A tal fin líbrese oficio en los términos del artículo
+400 del Código Procesal Civil y Comercial de la Nación o en los términos
+de lo dispuesto por la Acordada CSJN Nº 15/20, de encontrarse en el
+correspondiente sistema, dejándose constancia –en el texto del mismo–
+que, tratándose de una causa digital, tanto el escrito de inicio como la
+documental correspondiente se encuentran accesibles en el Sistema de
+Consultas Web, del Poder Judicial de la Nación (http://scw.pjn.gov.ar/
+scw). Hágase saber que su diligenciamiento quedará a cargo del letrado,
+quien a tal efecto podrá optar por la vía electrónica que estime pertinente.
+ Regístrese, notifíquese a las partes, al Sr. Fiscal
+Federal y ofíciese -vía DEOX- a los Juzgado Nº 4 y N° 11 del fuero,
+haciéndoles saber lo aquí resuelto.
+ WALTER LARA CORREA
+ Juez Federal (PRS)
+</div>
+    </td>
 </tr>
 <tr>
   <td>52959/2022</td>
@@ -246,8 +1003,286 @@
   <td>7/2/2023</td>
   <td>CONEXIDAD</td>
   <td>LW</td>
-  <td>terminado</td>
-  <td></td>
+  <td>Restringido</td>
+  <td>
+      <div class="expandable-text">
+I.- Expediente CAF 17100/2020 “OVSEJEVICH,
+LUIS c/ EN - AFIP Ley 27605 s/ PROCESO DE CONOCIMIENTO”:
+(i) A fojas 3/24 (conforme surge del sistema
+informático Lex 100, al cual se hará referencia en lo sucesivo), el Sr. Luis
+OVSEJEVICH inicia demanda, en los términos del artículo 322 del
+Código Procesal Civil y Comercial de la Nación, ante este Juzgado,
+contra el Poder Ejecutivo Nacional-Administración Federal de Ingresos
+Públicos, con el objeto que se declare la inconstitucionalidad del artículo
+28 de la Ley N° 27.541 y del artículo 9º del Decreto Reglamentario N°
+99/19, que incrementó la alícuota del Impuesto sobre los Bienes
+Personales para el período fiscal 2019.
+(ii) A fojas 46/55, la parte actora informa el inicio de
+un procedimiento de fiscalización, y solicita el dictado de una medida
+cautelar.
+(iii) A fojas 57/64, amplia demanda, atento a que se
+produjo el vencimiento del período fiscal del Impuesto sobre los Bienes
+Personales, y solicita lo mismo que peticionó al interponer la demanda,
+pero respecto del periodo fiscal 2020, ya que la situación -a su entenderresultaría análoga.
+(iv) A fojas 305/350, el Estado Nacional contesta
+demanda y solicita el rechazo de la acción incoada (conf. aclaración
+realizada a fojas 352).
+(v) A fojas 363, el Juzgado rechaza la medida
+cautelar peticionada.
+(vi) A fojas 364, atento a la conexidad solicitada en el
+expediente N° 7.357/2021, caratulado “OVSEJEVICH, LUIS c/ EN - AFIP
+Ley 27605 s/ PROCESO DE CONOCIMIENTO”, que tramitaba ante el
+Juzgado N° 4 del fuero, se ordena remitir de manera conjunta las causas
+al Sr. Fiscal Federal a fin de que se expida sobre la acumulación de las
+mismas.
+(vii) A fojas 365, el Ministerio Público Fiscal se remite
+al dictamen elaborado en el marco de la causa N° 7.357/2021, por el cual
+consideró que debía declararse la conexidad entre las causas.
+(viii) A fojas 384, pasan los autos a resolver.
+(ix) A fojas 385, se suspende el llamado de autos a
+resolver y se corre vista al Fiscal Federal junto con la causa N° 52.959/22
+titulada, “OVSEJEVICH, LUIS c/ EN - AFIP Ley 27667 s/ PROCESO DE
+CONOCIMIENTO”, para que se expida sobre la conexidad allí solicitada.
+(x) A fojas 386, el Fiscal Federal se remite al
+dictamen elaborado en el marco de la causa N° 52.959/2022, en el cual
+también sostiene que debe declararse la conexidad de las causas.
+(xi) A fojas 388, pasa los autos a resolver las
+conexidades planteadas. y pasan los autos a resolver.
+Poder Judicial de la Nación
+JUZGADO CONTENCIOSO ADMINISTRATIVO
+FEDERAL 7
+(xii) A fojas 389/392, sin perjuicio de lo expuesto
+precedentemente, la Administración Federal de Ingresos Públicos se
+opone a la conexidad formulada con la causa N° 52.959/22 titulada
+“OVSEJEVICH, LUIS c/ EN - AFIP Ley 27667 s/ PROCESO DE
+CONOCIMIENTO”, dado que -en esta última- no hubo traslado de la
+demanda y no tuvo oportunidad de intervenir.
+II.- Expediente CAF 7357/2021 “OVSEJEVICH, LUIS
+c/ EN - AFIP Ley 27605 s/ PROCESO DE CONOCIMIENTO”:
+(i) A fojas 26/47, el Sr. Luis OVSEJEVICH promueve,
+por ante el Juzgado N° 4 del fuero, una acción declarativa de certeza en
+contra del Poder Ejecutivo Nacional - Administración Federal de Ingresos
+Públicos a fin de hacer cesar el estado de incertidumbre existente con
+relación a la legitimidad y aplicación en el caso concreto de la Ley N°
+27.605 y demás normas aplicables por las cuales se creó y puso en
+vigencia el “Aporte Solidario y Extraordinario para Ayudar a Morigerar los
+Efectos de la Pandemia”, por el período fiscal 2019.
+(ii) A fojas 175/226, la Administración Federal de
+Ingresos Públicos contesta demanda y pide la acumulación con la causa
+17.100/2020 caratulada “OVSEJEVICH, LUIS c/ EN - AFIP Y OTRO s/
+PROCESO DE CONOCIMIENTO”.
+Al respecto, sostiene que, entre las causas, existen
+premisas de hecho comunes e identidad de partes y que, si bien los
+planteos no resultan análogos en su totalidad, la existencia de elementos
+conexos, conlleva a que resulte necesario el tratamiento de ambos
+procesos en conjunto, en tanto su discusión por separado podría
+conllevar a un dispendio jurisdiccional, e incluso a sentencias
+contradictorias.
+(iii) A fojas 227/234, la actora amplia demanda y
+solicita una medida cautelar a los fines de que se haga cesar el estado
+de incertidumbre existente con relación a la legitimidad y aplicación en el
+caso concreto de la Ley N° 27.605, respecto al “Aporte Solidario y
+Extraordinario para Ayudar a Morigerar los Efectos de la Pandemia”, por
+el período fiscal 2020.
+(iv) En dicho marco, el Juzgado N° 4 del fuero remite
+la causa N° 7.357/2021 a este Tribunal y, a fojas 239/240, la actora
+contesta y presta conformidad con la acumulación de ambos procesos,
+en tanto “existen elementos conexos entre las demandas interpuestas”.
+(v) A fojas 241, se remite la causa al Señor Fiscal
+Federal, a fin de que se expida respecto de la conexidad solicitada, quien
+-a fojas 242/247- dictamina que se debe declarar la conexidad entre la
+causa N° 7.357/2021 “OVSEJEVICH, LUIS c/ EN - AFIP Ley 27605 s/
+PROCESO DE CONOCIMIENTO” y el expediente que tramita por ante
+este Juzgado (N° 17.100/2020).
+(vi) A fojas 248, pasan los autos a resolver. No
+obstante, a fojas 249, se suspende el llamado, atento a la denuncia de
+una nueva conexidad solicitada en el marco de la causa N° 52.959/2022,
+caratulada “OVSEJEVICH, Luis C/ EN-AFIP-LEY 27667 S/ PROCESO
+DE CONOCIMIENTO”, con la causa N° 17.100/2020.
+(vii) En virtud de lo dispuesto en las causas Nros.
+17.100/20 y 52.959/22, a fojas 250, se reanuda el llamado de autos a
+resolver.
+(viii) A fojas 254/257, sin perjuicio de lo expuesto
+precedentemente, la demandada se opone a la última conexidad
+opuesta, puesto que no fue citada a comparecer en la referida causa.
+III.- Expediente CAF 52.959/2022 “OVSEJEVICH,
+LUIS c/ EN - AFIP Ley 27667 s/ PROCESO DE CONOCIMIENTO”:
+(i) A fojas 15/40 el Sr. OVSEJEVICH inicia demanda
+ante el Juzgado N° 11 del fuero, contra la Administración Federal de
+Ingresos Públicos, para que se declare la inconstitucionalidad del
+régimen de alícuotas diferenciales e incrementadas sobre los bienes
+Poder Judicial de la Nación
+JUZGADO CONTENCIOSO ADMINISTRATIVO
+FEDERAL 7
+situados en el exterior que establece la Ley N° 27.667, para el periodo
+fiscal 2021. En ese mismo acto, solicita la acumulación del proceso, con
+la causa N° 17100/2020, que tramita por ante este Juzgado.
+(ii) En virtud de la petición realizada en el escrito de
+inicio, a fojas 41, el Juzgado N° 11 remite la causa a este Tribunal, para
+que se expida sobre la acumulación formulada.
+(iii) De tal manera que, a fojas 45, se le da vista al
+Fiscal Federal, quien a fojas 46/49 destaca que la causa resulta análoga
+a la N° 17100/20, con la salvedad del período fiscal reclamado y las
+modificaciones al gravamen a los bienes personales incorporados por la
+Ley N° 27.667. En esos términos, opina que se debe hacer lugar a la
+acumulación incoada.
+(iv) Finalmente, a fojas 52, pasan los autos a
+resolver.
+IV.- Así planteada la cuestión, cabe tener en cuenta
+que el Código Procesal Civil y Comercial de la Nación en su artículo 188,
+establece que “[p]rocederá la acumulación de procesos cuando hubiere
+sido admisible la acumulación subjetiva de acciones de conformidad con
+lo prescripto en el artículo 88 y, en general, siempre que la sentencia que
+haya de dictarse en uno de ellos pudiere producir efectos de cosa
+juzgada en otro u otros. Se requerirá, además: 1) Que los procesos se
+encuentren en la misma instancia. 2) Que el juez a quien corresponda
+entender en los procesos acumulados sea competente por razón de la
+materia. A los efectos de este inciso no se considerarán distintas las
+materias civil y comercial. 3) Que puedan sustanciarse los mismos
+trámites. Sin embargo, podrán acumularse DOS (2) o más procesos de
+conocimiento, o DOS (2) o más procesos de ejecución sujetos a distintos
+trámites, cuando su acumulación resultare indispensable en razón de
+concurrir la circunstancia prevista en la última parte del primer párrafo.
+En tal caso, el juez determinará el procedimiento que corresponde
+imprimir al juicio acumulado. 4) Que el estado de las causas permita su
+sustanciación conjunta, sin producir demora perjudicial e injustificada en
+el trámite del o de los que estuvieren más avanzados”.
+Asimismo, es dable señalar que la conexidad
+procede siempre que la sentencia que haya de dictarse en un pleito
+pudiere producir efectos de cosa juzgada en el otro y el consiguiente
+escándalo jurídico que originaría el tratamiento autónomo de
+pretensiones que se encuentran vinculadas por la causa o por el objeto.
+Su finalidad estriba que en aquellas causas que tienen entre sí una
+vinculación jurídica evidente, sea el mismo juez el que conozca a fin de
+evitar resoluciones contradictorias (conf. Finochietto, Eduardo, Arazi,
+Rolando; Cód. Procesal Civil y Comercial de la Nación-Comentado,
+Anotado y Concordado, Ed. Astrea 1978, T. I, pág. 517). Al respecto, se
+tiene dicho que el principal fundamento para conceder el instituto de la
+acumulación es que “[f]undamentalmente, debe explicitarse el riesgo de
+escándalo jurídico que pueda dar lugar al dictado de sentencias
+contradictorias (...) [la cual es] la principal finalidad del instituto” (Highton,
+Elena I., Areán, Beatriz A., (dir.), “Código Procesal Civil y Comercial de la
+Nación”, Tomo 3, Buenos Aires, Hammurabi, 2005, pág. 807).
+En este sentido, cabe aclarar que “[p]ueden
+acumularse dos o más procesos de conocimiento (esto es, un juicio
+ordinario y uno sumarísimo) cuando la sentencia que deba pronunciarse
+en uno de ellos pudiere producir efectos de cosa juzgada en otro u otros.
+El artículo 194 otorga la flexibilidad necesaria” (conf. Colombo, Carlos J.
+y Kiper Claudio M., “Código Procesal Civil y Comercial de la Nación:
+anotado y comentado”, Tº II, Buenos Aires, La Ley, 2006, pág. 404).
+En esta inteligencia, cabe considerar que el instituto
+de la acumulación por conexidad solo es aplicable cuando entre los
+procesos median elementos comunes e interdependientes que los
+vinculan por la causa, hallando su fundamento en la necesidad de evitar
+la eventualidad de pronunciamientos contradictorios a que pueda
+conducir la sustanciación de pretensiones conexas en procesos distintos.
+Y, la acumulación subjetiva de pretensiones procederá, entonces,
+siempre que las distintas pretensiones sean conexas en virtud de la
+causa, del objeto, o de ambos elementos a la vez, o sea, cuando se
+Poder Judicial de la Nación
+JUZGADO CONTENCIOSO ADMINISTRATIVO
+FEDERAL 7
+invoque como fundamentos de ella una misma relación jurídica o una
+misma situación de hecho (Fallos: 341:1854; 328:4450; 328:846;
+326:3541; entre otros).
+V.- Bajo los parámetros expuestos, resulta menester
+analizar si el objeto de las pretensiones de las citadas causas
+-Expedientes Nros. 17100/20, 7357/21 y 52959/22- guardan relación
+entre sí.
+A tales efectos, es dable destacar que la
+Administración Federal de Ingresos Públicos solicita la conexidad de los
+expedientes Nros. 17100/20 y del 7.357/21, en tanto manifiesta que
+ambos procesos se encuentran alcanzados por los supuestos
+establecidos en el artículo 188 del Código Procesal Civil y Comercial de
+la Nación. A su vez, se opone al planteo de conexidad efectuado por la
+parte actora respecto del expediente N° 52.959/22, por considerar que, si
+bien existe identidad de partes, el objeto de la demanda difiere en los
+períodos fiscales involucrados y en la normativa cuestionada.
+En función de ello, y con el objeto de tratar las
+acumulaciones pretendidas en estos actuados, conviene apuntar que el
+Sr. Luis OVSEJEVICH considera que las tres demandas interpuestas
+contra la Administración Federal de Ingresos Públicos, persiguen el
+objeto de declarar la inconstitucionalidad de las reformas introducidas a
+la Ley N° 23.966 y por la Ley N° 27.605 y que ambas normas se
+relacionan entre sí.
+VI.- En las condiciones descriptas, y compartiendo el
+Tribunal los argumentos vertidos por el Sr. Fiscal Federal en el dictamen
+obrante a fojas 242/247 del expediente CAF N° 7357/2021, así como en
+el obrante a fojas 46/49 del expediente N° 52959/2022, corresponde
+admitir sin más trámite las conexidades respectivamente solicitadas.
+Ello es así, por cuanto no cabe dudas de que las
+causas se hallan vinculadas por la naturaleza de las cuestiones
+involucradas, al punto tal que la sentencia a dictarse en una de ellas
+puede producir efectos de cosa juzgada respecto de la otra (conf. arts.
+188 y 190 del CPCC; Falcón, Cód. Proc. Civ. y Com de la Nación,
+Abeledo Perrot, 1994, T. II, pág. 220 y ss.; Morello-Sosa-Berizonce,
+CPCC de la Pcia. De Buenos Aires y de la Nación, Librería Editorial
+Platense, 1993, T. II-B, págs. 460 y 479/480).
+En igual sentido, cuadra agregar que en el
+Expediente N° CAF 52959/2022 no se corrió traslado y que en las
+causas Nros. 17100/2020 y 7357/2021, aun no se determinó si
+correspondía abrir las causas a prueba, puesto que se encontraba
+pendiente de resolver la acumulación opuesta.
+VII.- Por lo tanto, corresponde admitir la conexidad
+entre las causas "OVSEJEVICH, LUIS c/ EN-AFIP Y OTRO s/PROCESO
+DE CONOCIMIENTO" (expediente N° CAF 17.100/2020), “OVSEJEVICH
+Luis c/ EN – AFIP – Ley 27605 s/ Proceso De Conocimiento” (expediente
+CAF N° 7357/2021)” y “OVSEJEVICH, Luis C/ En-Afip-Ley 27667 S/
+Proceso De Conocimiento” (expediente CAF N° 52959/2022).
+Asimismo, y a los fines procurar el buen orden
+procesal entre las tres causas, se establece que los procesos
+acumulados tramitarán y se sustanciarán en el expediente N°
+17.100/2020 conforme a lo establecido en los artículos 189 y 194,
+primera parte, del CPCCN.
+A tales efectos y como consecuencia del estado de
+las causas (v. cons. VI), córrase traslado de la demanda instaurada en el
+expediente N° CAF 52959/2022, al Estado Nacional – AFIP por el
+término de treinta (30) días de conformidad con lo dispuesto por el
+artículo 338, 2da. Parte del Código Procesal. A tal fin líbrese oficio en los
+términos del artículo 400 del Código Procesal Civil y Comercial de la
+Nación o en los términos de lo dispuesto por la Acordada CSJN Nº 15/20,
+de encontrarse en el correspondiente sistema, dejándose constancia –en
+el texto del mismo– que, tratándose de una causa digital, tanto el escrito
+de inicio como la documental correspondiente se encuentran accesibles
+en el Sistema de Consultas Web, del Poder Judicial de la Nación
+(http://scw.pjn.gov.ar/ scw). Hágase saber que su diligenciamiento
+Poder Judicial de la Nación
+JUZGADO CONTENCIOSO ADMINISTRATIVO
+FEDERAL 7
+quedará a cargo del letrado, quien a tal efecto podrá optar por la vía
+electrónica que estime pertinente.
+Por todo lo expuesto, y de conformidad con lo
+dictaminado por el Sr. Fiscal Federal SE RESUELVE: 1) Admitir la
+conexidad de las causas “OVSEJEVICH Luis c/ EN – AFIP – Ley 27605
+s/ Proceso De Conocimiento” (expediente CAF N° 7.357/2021)”,
+“OVSEJEVICH, Luis C/ En-Afip-Ley 27667 S/ Proceso De Conocimiento”
+(expediente CAF N° 52.959/2022) y “OVSEJEVICH Luis C/ En-Afip-Dgi
+S/ Proceso De Conocimiento”, (expediente N°17.100/2021), que tramita
+por ante este Juzgado. 2) Disponer que las causas tramiten de manera
+conjunta en el expediente N° 17.100/21 (cfr. arts. 189 y 194, primera
+parte, del CPCCN), sin perjuicio de que se agregará en todas las causas
+copia de la presente resolución; para ello las partes deberán acompañar
+en esta última las copias digitalizada de todas las presentaciones
+realizadas en las causas Nros. 7.357/2021 y 52.959/2022 al día de la
+fecha; 3) Correr traslado de la demanda instaurada en el Expediente N°
+CAF 52959/2022, al Estado Nacional – AFIP por el término de treinta (30)
+días de conformidad con lo dispuesto por el artículo 338, segunda parte
+del Código Procesal. A tal fin líbrese oficio en los términos del artículo
+400 del Código Procesal Civil y Comercial de la Nación o en los términos
+de lo dispuesto por la Acordada CSJN Nº 15/20, de encontrarse en el
+correspondiente sistema, dejándose constancia –en el texto del mismo–
+que, tratándose de una causa digital, tanto el escrito de inicio como la
+documental correspondiente se encuentran accesibles en el Sistema de
+Consultas Web, del Poder Judicial de la Nación (http://scw.pjn.gov.ar/
+scw). Hágase saber que su diligenciamiento quedará a cargo del letrado,
+quien a tal efecto podrá optar por la vía electrónica que estime pertinente.
+ Regístrese, notifíquese a las partes, al Sr. Fiscal
+Federal y ofíciese -vía DEOX- a los Juzgado Nº 4 y N° 11 del fuero,
+haciéndoles saber lo aquí resuelto.
+ WALTER LARA CORREA
+ Juez Federal (PRS)
+</div>
+    </td>
 </tr>
 <tr>
   <td>50082/2019</td>
@@ -256,19 +1291,71 @@
   <td>4/11/2022</td>
   <td>IMPUGNACION LIQUIDACION</td>
   <td>JF</td>
-  <td>22/11/2022</td>
-  <td>terminado</td>
-</tr>
-<tr>
+  <td><a href="http://scw.pjn.gov.ar/scw/viewer.seam?id=Z6jvLf6Fe1zhaLuxHEGGPqiDgvgfzRM6yn0vgoWjs2Y%3D&tipoDoc=despacho&cid=30237" target="_blank">Link</a>
+  <td>
+      <div class="expandable-text">
+		I.- A fojas 337 el tribunal aprobó una liquidación por la que se ordenó a la demandada a pagar una “suma de $157.836,40 y en concepto de intereses” (sic).	
+
+		II.- A fojas 355/356 la demandada impugna dicha determinación, ya que -a su entender- el cálculo de intereses practicado resulta ajeno a lo resuelto en la sentencia de la Sala II del fuero, por la cual se la condenó a reintegrar la suma de $182.922.
+
+		III.- Así planteada la cuestión, resulta necesario realizar una reseña de los antecedentes más relevantes para examinar la procedencia de la impugnación.
+		A fojas 295, la Sala II de este fuero resolvió declarar la nulidad de la Disposición SDX Nº DI-2017-4541-APN-DNM#MI y la Resolución Nº RESOL-2019-128-APNSECI#MI que habían impuesto a la actora el pago de una multa por la suma de $182.922.
+		A fojas 333, la parte actora practicó liquidación por la suma total de $340.758,40, indicando que $182.922, correspondían al capital, y $157.836,40, a los intereses comprendidos entre el 06/09/19 (momento en que dio en pago la multa impuesta por la Dirección Nacional de Migraciones) y el 02/03/22 (tiempo en que practicó la liquidación).
+		A fojas 337, ante el silencio de la demandada, el tribunal resolvió aprobar la liquidación “en cuanto ha lugar por derecho la misma por la suma de $157.836,40 y en concepto de intereses”.
+		A fojas 353, la Dirección Nacional de Migraciones acompañó un comprobante de transferencia bancaria por la suma de $182.922, es decir únicamente el capital.
+			
+		IV.- Introducida la cuestión en debate, cabe destacar algunos planteos preliminares. 
+		Es dable recordar que la liquidación tiene por objeto determinar las sumas que corresponden conforme lo manda la sentencia, y para su aprobación -en los supuestos en que existen impugnaciones deben ponerse a disposición del Tribunal todos los elementos indispensables que permitan -mediante una simple verificación por el juez directamente- controlar que las cifras se corresponden con lo debido (conf. Sala I, in re “Gargiulo Horacio O. y otro c/ Caja de Retiros Jubilaciones y Pensiones de la Policía”, del 07/09/95).
+		También, debe tenerse presente que la liquidación, en la ejecución de sentencias, debe practicarse siempre de acuerdo con las bases fijadas por el Tribunal, verificando que en su confección se hayan respetado las pautas de la sentencia a fin de resguardar el principio de la cosa juzgada. Y, en este aspecto, los jueces tienen poderes-deberes suficientes para fijar o modificar de oficio, las liquidaciones practicadas por las partes, con prescindencia de la actitud de la contraria otorgando primacía a la verdad jurídica objetiva (conf. Morello y otros, Códigos Procesales en lo Civil y Comercial de la Provincia de Bs. As. y de la Nación, T. VI-1, pág. 47).		
+		
+		V.- En virtud de ello y en lo que aquí importa, la aprobación de la liquidación practicada no tiene fuerza de cosa juzgada, razón por la cual es susceptible de correcciones respecto de posibles errores que contenga. En el desarrollo del proceso, el cual debe ser ajustado al orden jurídico y con respeto frente al derecho de defensa, toda nota que pudiera invalidarlo por motivos formales o por vicios de voluntad del juzgador, deriva en la posibilidad de plantear disconformidad respecto de lo decidido en determinada providencia, ya que negar dicha posibilidad violentaría el principio de cosa juzgada. 
+		Al respecto, se ha dicho que la cosa juzgada es la "autoridad y eficacia de una sentencia judicial cuando no existen contra ella medios de impugnación que permitan modificarla” (conf. Couture, Eduardo J. “Fundamentos del Derecho Procesal Civil”, Tercera edición, editorial Depalma, Buenos Aires, 1958, pág. 401).
+		Así pues, en el caso de marras, al no haberse expedido la sentencia de Cámara respecto de los intereses, el planteo efectuado por la actora respecto de imponer su criterio en la liquidación resulta un remedio tardío, ello en razón de que el momento de interponer alguno de los recursos establecidos en el Código de rito respecto de resoluciones confusas o incompletas por parte de un tribunal, se encuentra ya fuera de término, por lo que las falencias del auto que aprobó la liquidación practicada respecto de los intereses no pueden ser tomadas e impuestas como responsabilidad de la parte demandada.
+													VI.- En razón de todo lo expuesto, corresponde hacer lugar al planteo formulado por la Dirección Nacional de Migraciones y, en consecuencia, dejar sin efecto la liquidación por intereses aprobada a fojas 337.	
+		
+		VII.- Con relación a las costas, es menester citar a la presente al artículo 68 del Código de rito, el cual dispone que “[l]a parte vencida en el juicio deberá pagar todos los gastos de la contraria, aun cuando ésta no lo hubiese solicitado. Sin embargo, el juez podrá eximir total o parcialmente de esta responsabilidad al litigante vencido, siempre que encontrare mérito para ello, expresándolo en su pronunciamiento, bajo pena de nulidad”.
+		Asimismo, el artículo 69 del mencionado Código, estipula que “en los incidentes también regirá y lo establecido en el artículo anterior”.
+		Sobre esa base, atento a las particularidades del caso, corresponde imponer las costas en el orden causado (conf. art. 68, segunda parte, y 69 del C.P.C.C.N.).		
+
+		De conformidad con lo expuesto precedentemente, SE RESUELVE: 1) Hacer lugar a la impugnación efectuada por la Dirección Nacional de Migraciones a fojas 355/356; 2) Dejar sin efecto la liquidación que aprobó los intereses a fojas 337; e 3) imponer las costas en el orden causado (conf. arts. 68 y 69 del C.P.C.C.N.). 
+
+		Regístrese y notifíquese. 
+
+						Walter LARA CORREA 
+						              Juez Federal
+	
+      </div>
+    </td>
+  </tr>
   <td>13770/2020</td>
   <td>CARUSO, DANIEL HIGINIO C/ EN - AFIP S/PROCESO DE CONOCIMIENTO</td>
   <td>Firmado</td>
   <td>4/11/2022</td>
   <td>IMPUGNACION LIQUIDACION</td>
   <td>EV</td>
-  <td>9/11/2022</td>
-  <td>terminado</td>
-</tr>
+  <td><a href="http://scw.pjn.gov.ar/scw/viewer.seam?id=MBbJGqtT8VcDfoHpEgN%2B7KcCDqaTXrKH3d6fMBEzhzw%3D&tipoDoc=despacho&cid=35190" target="_blank">Link</a>
+  			<td>
+      <div class="expandable-text">
+			I.- A fojas 200 (conforme surge del sistema informático Lex100, al cual se hará referencia en lo sucesivo), la parte actora calcula por un total de PESOS TRESCIENTOS CINCO MIL DOSCIENTOS CINCUENTA Y TRES CON TREINTA Y SIETE CENTAVOS ($305.253,37) los intereses devengados desde el 21/12/22, hasta la fecha en que esta parte tuvo disponible dichas sumas, es decir al 10/04/23.
+
+			II.- A fojas 204, en ocasión de contestar el traslado conferido a fojas 201, la Administración Federal de Ingresos Públicos (en adelante AFIP), impugna el cálculo confeccionado por la actora, en tanto, se pretende calcular los accesorios desde antes de la aprobación de fojas 189.
+			En dicho marco, considera que corresponde calcular los intereses desde el 29/03/23, fecha en que se habría realizado el pago, hasta el 09/04/23, momento en que se informó la cancelación de las sumas.
+			De tal manera, infiere que adeuda la suma de PESOS VEINTITRES MIL QUINIENTOS CINCUENTA Y DOS CON OCHENTA Y SIETE CENTAVOS ($23.552,87).
+
+			III.- A fojas 206, la parte actora apunta que resulta irrazonable el período sobre el cual el Fisco Nacional pretende calcular los accesorios en cuestión. Por ello, solicita el rechazo a la impugnación opuesta por la demandada y que se apruebe la liquidación de intereses que confeccionó.
+
+			IV.- Así las cosas, con el objeto de ser claro y conciso, es dable destacar que en la presente causa se ordenó el reintegro de las sumas retenidas en concepto de impuesto a las ganancias desde los CINCO (5) años de interposición de la demanda, con mas los intereses devengados desde la fecha de promoción de la demanda (conf. art. 179 de la ley 11.683) y conforme las tasas que al efecto fije el Ministerio de Economía en materia de repetición de tributos (Res. M° Hacienda 598/19), hasta su efectivo pago (v. fs. 117 y 168).
+			Como consecuencia de ello, y frente al cálculo de fojas 174/175, este Tribunal entendió que la suma que acompañaba la demandada no se ajustaba a la manda judicial y ordenó a practicar una nueva liquidación.
+			En dicho marco, a fojas 183/186, el Fisco calculó las sumas adeudadas, con mas los intereses producidos hasta el 20/12/22 y la actora prestó conformidad (v. fs. 188). 
+			De tal manera, el 28/12/22 se aprobó la liquidación confeccionada (v. fs. 189) y el 09/04/23 la AFIP informó la dación en pago realizada el 27/03/23 (v. fs. 192/194).
+
+			V.- En función de la reseña realizada precedentemente, resulta ostensible que la demandada con la liquidación de fojas 204 pretende evitar abonar los intereses producidos desde el cálculo de fojas 183/186 hasta el momento del efectivo pago. Por ello, corresponde rechazar la impugnación de la liquidación opuesta por la AFIP y, en consecuencia, aprobar en cuanto ha lugar por derecho, la suma de PESOS TRESCIENTOS CINCO MIL DOSCIENTOS CINCUENTA Y TRES CON TREINTA Y SIETE CENTAVOS ($305.253,37) los intereses devengados desde el 21/12/22.
+
+			En tales condiciones, SE RESUELVE: 1) Rechazar la impugnación de liquidación opuesta por la parte demandada; 2) Aprobar en cuanto ha lugar por derecho, la suma de PESOS TRESCIENTOS CINCO MIL DOSCIENTOS CINCUENTA Y TRES CON TREINTA Y SIETE CENTAVOS ($305.253,37) en concepto de intereses; 3) Imponer las costas a la vencida (conf. arts. 68 y 69 del CPCCN).
+					Walter LARA CORREA 
+					JUEZ FEDERAL (PRS)
+      </div>
+    </td>
 <tr>
   <td>18516/2022</td>
   <td>TOGNON, MARIA FERNANDA C/ EN-M RREE COMERCIO INTERANCIONAL Y CULTO S/DAÑOS Y PERJUICIOS</td>
@@ -287,7 +1374,7 @@
   <td>FALTA HABILITACION</td>
   <td>LW</td>
   <td>7/11/2022</td>
-  <td>terminado</td>
+  <td>LINK</td>
 </tr>
 <tr>
   <td>68522/2015</td>
@@ -2286,18 +3373,7 @@
       <td>12/7/2023</td>
       <td>MEDIA FIRMA</td>
     </tr>
-    <tr>
-      <td>38612/2022</td>
-      <td>CURY EDUARDO C/ EN AFIP LEY 20628 S/ PROCESO DE CONOCIMIENTO</td>
-      <td>Firmado</td>
-      <td>3/7/2023</td>
-      <td>IMPOSIBILIDAD DE CONTINUAR TRAMITE</td>
-      <td>MGC</td>
-      <td></td>
-      <td></td>
-    </tr>
 </table>
-
 <script>
   const filtroInput = document.getElementById('filtro');
   const tabla = document.querySelector('table');
@@ -2324,7 +3400,11 @@
       filas[i].style.display = mostrarFila ? '' : 'none';
     }
   }
+
+  const expandableText = document.querySelector('.expandable-text');
+  expandableText.addEventListener('click', () => {
+    expandableText.classList.toggle('expanded');
+  });
 </script>
 </body>
 </html>
-
